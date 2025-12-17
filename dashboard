@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Profil</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-gray-100 transition-colors duration-300">
+    
+    <nav
+        id="navbar"
+        class="
+            bg-white shadow px-4 md:px-8 py-4 
+            sticky top-0 z-50 
+            transition-colors duration-300
+        ">
+
+        <div class="flex items-center justify-between">
+
+            <!--Logo-->
+            <div class="text-lg md:text-xl font-bold text-blue-600">
+                BagusDev
+            </div>
+
+            <button
+                id="menuBtn"
+                class="md:hidden flex flex-col gap-1"
+            >
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            </button>
+
+            <!--Menu-->
+            <div class="hidden md:flex gap-6 text-gray-600">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="about.html" class="hover:text-blue-600">About</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact</a>
+            </div>
+
+        </div>
+
+        <div
+            id="mobileMenu"
+            class="
+                md:hidden
+                overflow-hidden
+                max-h-0
+                transition-all duration-300
+                flex flex-col items-center justify-center gap-3
+                text-gray-600
+        ">
+            <a href="index.html" class="hover:text-blue-600">Home</a>
+            <a href="about.html" class="hover:text-blue-600">About</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        </div>
+
+    </nav>
+
+    <main class="p-8 md:p-10">
+
+        <h1 class="text-2xl font-bold mb-6 text-gray-800">
+            Daftar Kategori
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="
+                bg-white
+                p-6 rounded-lg 
+                shadow-md
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300
+            ">
+
+                <img 
+                    src="
+                        https://media.istockphoto.com/id/1220068378/id/foto/buatan-cina-kotak-kardus-dengan-teks-yang-dibuat-di-cina-dan-bendera-cina-di-roller-conveyor.jpg?s=612x612&w=is&k=20&c=7XpTFR0kN4-y1VP9_EViglOUmLSX8AXy-apl08DH7ng=" 
+                    alt="Produk"
+                    class="w-full h-40 object-cover"
+                >
+
+                <div class="p-2">
+                    <h3 class="text-lg font-semibold mb-2">kategori 1</h3>
+                    <p class="text-gray-600 mb-4">
+                        Deskripsi singkat tentang kategori 1.
+                    </p>
+                    <button class="
+                        bg-blue-600 text-white 
+                        px-4 py-2 rounded
+                        hover:bg-blue-700 transition
+                    "><a href="card1.html">
+                        Detail
+                    </a>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="
+                bg-white
+                p-6 rounded-lg 
+                shadow-md
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300
+            ">
+
+                <img 
+                    src="https://media.istockphoto.com/id/1397790017/id/foto/pandangan-close-up-dari-tangan-wanita-yang-tidak-dapat-dikenali-memegang-beberapa-produk.jpg?s=1024x1024&w=is&k=20&c=hWvM52e-EPchkIgrjcDO0mR5V_x9Zj02oSY8n_c3cK0=" 
+                    alt="Produk"
+                    class="w-full h-40 object-cover"
+                >
+
+                <div class="p-2">
+                    <h3 class="text-lg font-semibold mb-2">kategori 2</h3>
+                    <p class="text-gray-600 mb-4">
+                        Deskripsi singkat tentang kategori 2.
+                    </p>
+                    <button class="
+                        bg-blue-600 text-white 
+                        px-4 py-2 rounded
+                        hover:bg-blue-700 transition
+                    ">
+
+                        Detail
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="
+                bg-white
+                p-6 rounded-lg 
+                shadow-md
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300
+            ">
+
+                <img 
+                    src="https://media.istockphoto.com/id/1299083810/id/foto/paket-pada-sabuk-konveyor-di-gudang.jpg?s=612x612&w=is&k=20&c=iUzVPZAM-WFlpfuNsJDthBGxd4kWRj1B4qPLMyTAvI4=" 
+                    alt="Produk"
+                    class="w-full h-40 object-cover"
+                >
+
+                <div class="p-2">
+                    <h3 class="text-lg font-semibold mb-2">kategori 3</h3>
+                    <p class="text-gray-600 mb-4">
+                        Deskripsi singkat tentang kategori 3.
+                    </p>
+                    <button class="
+                        bg-blue-600 text-white 
+                        px-4 py-2 rounded
+                        hover:bg-blue-700 transition
+                    ">
+
+                        Detail
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="
+                bg-white
+                p-6 rounded-lg 
+                shadow-md
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300
+            ">
+
+                <img 
+                    src="https://media.istockphoto.com/id/941410386/id/foto/logistik-gudang-distribusi-paket-kemasan-siap-untuk-pengiriman-dan-pengiriman.jpg?s=612x612&w=0&k=20&c=teyaRpruGX9fZ10wX1RRsSAJH_68moDBcdBWTqEyF78=" 
+                    alt="Produk"
+                    class="w-full h-40 object-cover"
+                >
+
+                <div class="p-2">
+                    <h3 class="text-lg font-semibold mb-2">kategori 4</h3>
+                    <p class="text-gray-600 mb-4">
+                        Deskripsi singkat tentang kategori 4.
+                    </p>
+                    <button class="
+                        bg-blue-600 text-white 
+                        px-4 py-2 rounded
+                        hover:bg-blue-700 transition
+                    ">
+
+                        Detail
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t mt-10">
+        <div class="
+            max-w-6xl mx-auto px-6 py-6
+            flex flex-col md:flex-row items-center justify-between
+            gap-4
+        ">
+
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 MyWebsite. All rights reserved.
+        </p>
+
+        <div class="flex gap-4 text-gray-500">
+            <a href="" class="hover:text-blue-600">Privacy</a>
+            <a href="" class="hover:text-blue-600">Terms</a>
+            <a href="" class="hover:text-blue-600">Contact</a>
+        </div>
+
+        </div>
+    </footer>
+
+</body>
+
+    <script>
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("mobileMenu");
+        const lines = btn.querySelectorAll("span");
+        const html = document.documentElement;
+        const nav = document.getElementById("navbar");
+
+        btn.addEventListener("click", () => {
+            const isOpen = !menu.classList.contains("max-h-0");
+
+            // toggle menu
+            menu.classList.toggle("max-h-0");
+            menu.classList.toggle("max-h-40");
+
+            // animasi icon
+            lines[0].classList.toggle("rotate-45");
+            lines[0].classList.toggle("translate-y-1.5");
+
+            lines[1].classList.toggle("opacity-0");
+
+            lines[2].classList.toggle("-rotate-45");
+            lines[2].classList.toggle("-translate-y-1.5");
+        });
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+            nav.classList.add("shadow");
+            } else {
+            nav.classList.remove("shadow");
+            }
+        });
+    </script>
+
+
+</html>

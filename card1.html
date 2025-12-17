@@ -13,17 +13,17 @@
   <nav id="navbar" class="bg-white sticky top-0 z-50 transition-shadow">
     <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
-      <!-- Logo -->
-      <div class="text-xl font-bold text-blue-600">
-        BagusDev
-      </div>
+        <!-- Logo -->
+        <div class="text-xl font-bold text-blue-600">
+            BagusDev
+        </div>
 
-      <!-- Hamburger -->
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1">
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 origin-left"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 origin-left"></span>
-      </button>
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+            <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        </button>
 
       <!-- Menu Desktop -->
       <div class="hidden md:flex gap-6 text-gray-600">
@@ -36,9 +36,15 @@
 
     <!-- Menu Mobile -->
     <div
-      id="mobileMenu"
-      class="md:hidden max-h-0 overflow-hidden transition-all duration-300
-             flex flex-col items-center gap-3 text-gray-600 pb-4"
+        id="mobileMenu"
+        class="
+            md:hidden
+            overflow-hidden
+            max-h-0
+            transition-all duration-300 ease-in-out
+            flex flex-col items-center gap-3
+            text-gray-600
+        "
     >
       <a href="index.html" class="hover:text-blue-600">Home</a>
       <a href="about.html" class="hover:text-blue-600">About</a>
@@ -116,14 +122,16 @@
     const nav = document.getElementById("navbar");
 
     btn.addEventListener("click", () => {
-      menu.classList.toggle("max-h-0");
-      menu.classList.toggle("max-h-40");
+        menu.classList.toggle("max-h-0");
+        menu.classList.toggle("max-h-screen");
 
-      lines[0].classList.toggle("rotate-45");
-      lines[0].classList.toggle("translate-y-1.5");
-      lines[1].classList.toggle("opacity-0");
-      lines[2].classList.toggle("-rotate-45");
-      lines[2].classList.toggle("-translate-y-1.5");
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("translate-y-1.5");
+
+        lines[1].classList.toggle("opacity-0");
+
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("-translate-y-1.5");
     });
 
     window.addEventListener("scroll", () => {

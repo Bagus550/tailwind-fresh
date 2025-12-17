@@ -1,98 +1,135 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Kategori 1</title>
-    <link rel="stylesheet" href="output.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kategori 1 | BagusDev</title>
+  <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-gray-100 transition-colors duration-300">
-    <nav
-        id="navbar"
-        class="
-            bg-white shadow px-4 md:px-8 py-4 
-            sticky top-0 z-50 
-            transition-colors duration-300
-        ">
 
-        <div class="flex items-center justify-between">
+<body class="bg-gray-100">
 
-            <!--Logo-->
-            <div class="text-lg md:text-xl font-bold text-blue-600">
-                BagusDev
-            </div>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="bg-white sticky top-0 z-50 transition-shadow">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
-            <button
-                id="menuBtn"
-                class="md:hidden flex flex-col gap-1"
-            >
-                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-            </button>
+      <!-- Logo -->
+      <div class="text-xl font-bold text-blue-600">
+        BagusDev
+      </div>
 
-            <!--Menu-->
-            <div class="hidden md:flex gap-6 text-gray-600">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="about.html" class="hover:text-blue-600">About</a>
-                <a href="contact.html" class="hover:text-blue-600">Contact</a>
-            </div>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 origin-left"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 origin-left"></span>
+      </button>
 
-        </div>
+      <!-- Menu Desktop -->
+      <div class="hidden md:flex gap-6 text-gray-600">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </div>
 
-        <div
-            id="mobileMenu"
-            class="
-                md:hidden
-                overflow-hidden
-                max-h-0
-                transition-all duration-300
-                flex flex-col items-center justify-center gap-3
-                text-gray-600
-        ">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="about.html" class="hover:text-blue-600">About</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact</a>
-        </div>
+    </div>
 
-    </nav>
+    <!-- Menu Mobile -->
+    <div
+      id="mobileMenu"
+      class="md:hidden max-h-0 overflow-hidden transition-all duration-300
+             flex flex-col items-center gap-3 text-gray-600 pb-4"
+    >
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    </div>
+  </nav>
 
-    <main class="p-8 md:p-10">
+  <!-- HEADER -->
+  <header class="bg-blue-600 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">
+        Kategori 1
+      </h1>
+      <p class="text-lg text-blue-100">
+        Informasi lengkap dan detail tentang kategori pertama.
+      </p>
+    </div>
+  </header>
 
-        
-        
-    </main>
+  <!-- CONTENT -->
+  <main class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+
+    <!-- Text -->
+    <div class="flex flex-col justify-center">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">
+        Tentang Kategori 1
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Kategori 1 berisi produk atau layanan unggulan yang dirancang
+        untuk memenuhi kebutuhan pengguna secara efisien dan modern.
+      </p>
+      <p class="text-gray-700 mb-6">
+        Dengan pendekatan desain yang rapi dan performa optimal,
+        kategori ini cocok untuk pengguna yang mengutamakan kualitas
+        dan kemudahan penggunaan.
+      </p>
+
+      <a href="index.html"
+         class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded
+                hover:bg-blue-700 transition">
+        ← Kembali ke Home
+      </a>
+    </div>
+
+    <!-- Image -->
+    <div class="flex justify-center items-center">
+      <img
+        src="https://media.istockphoto.com/id/1220068378/id/foto/buatan-cina-kotak-kardus-dengan-teks-yang-dibuat-di-cina-dan-bendera-cina-di-roller-conveyor.jpg"
+        alt="Kategori 1"
+        class="rounded-lg shadow-lg w-full md:w-4/5 object-cover"
+      >
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">
+        &copy; 2025 BagusDev. All rights reserved.
+      </p>
+      <div class="flex gap-4 text-gray-500">
+        <a href="#" class="hover:text-blue-600">Privacy</a>
+        <a href="#" class="hover:text-blue-600">Terms</a>
+        <a href="#" class="hover:text-blue-600">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    const lines = btn.querySelectorAll("span");
+    const nav = document.getElementById("navbar");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("max-h-0");
+      menu.classList.toggle("max-h-40");
+
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-1.5");
+      lines[1].classList.toggle("opacity-0");
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-1.5");
+    });
+
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("shadow", window.scrollY > 10);
+    });
+  </script>
 
 </body>
-    <script>
-        const btn = document.getElementById("menuBtn");
-        const menu = document.getElementById("mobileMenu");
-        const lines = btn.querySelectorAll("span");
-        const html = document.documentElement;
-        const nav = document.getElementById("navbar");
-
-        btn.addEventListener("click", () => {
-            const isOpen = !menu.classList.contains("max-h-0");
-
-            // toggle menu
-            menu.classList.toggle("max-h-0");
-            menu.classList.toggle("max-h-40");
-
-            // animasi icon
-            lines[0].classList.toggle("rotate-45");
-            lines[0].classList.toggle("translate-y-1.5");
-
-            lines[1].classList.toggle("opacity-0");
-
-            lines[2].classList.toggle("-rotate-45");
-            lines[2].classList.toggle("-translate-y-1.5");
-        });
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-            nav.classList.add("shadow");
-            } else {
-            nav.classList.remove("shadow");
-            }
-        });
-    </script>
 </html>

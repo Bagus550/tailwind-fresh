@@ -183,28 +183,36 @@
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs@3/dist/email.min.js"></script>
   <script>
-    (function(){
-      emailjs.init("N7PtFR4dGCyvvehOC");
-    })();
+    document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById("contactForm")
-      .addEventListener("submit", function(e) {
+      emailjs.init("N7PtFR4dGCyvvehOC");
+
+      const form = document.getElementById("contactForm");
+
+      if (!form) {
+        console.error("Form contactForm tidak ditemukan");
+        return;
+      }
+
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         emailjs.sendForm(
           "service_rm7uwcr",
           "template_5h38x8e",
           this
-        )
-        .then(() => {
-          alert("Pesan berhasil dikirim");
-          this.reset();
-        }, (error) => {
-          alert("Gagal ngirim pesan");
-          console.log(error);
+        ).then(() => {
+          alert("Pesan berhasil dikirim 🚀");
+          form.reset();
+        }).catch((error) => {
+          alert("Gagal ngirim pesan 😭");
+          console.error(error);
         });
       });
+
+    });
   </script>
+
 
 </body>
 </html>

@@ -10,7 +10,16 @@
 <body class="bg-gray-100">
 
 <!-- NAVBAR -->
-<nav class="bg-white shadow sticky top-0 z-50">
+<nav
+    id="navbar"
+    class="
+      bg-white
+      border-b
+      shadow-sm
+      sticky top-0 z-50
+      transition-shadow
+    "
+  >
     <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
         <div class="text-lg md:text-xl font-bold text-blue-600">
@@ -124,6 +133,7 @@
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("mobileMenu");
     const lines = btn.querySelectorAll("span");
+    const nav = document.getElementById("navbar");
 
     btn.addEventListener("click", () => {
         menu.classList.toggle("max-h-0");
@@ -136,6 +146,9 @@
 
         lines[2].classList.toggle("-rotate-45");
         lines[2].classList.toggle("-translate-y-1.5");
+    });
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("shadow-md", window.scrollY > 10);
     });
 </script>
 

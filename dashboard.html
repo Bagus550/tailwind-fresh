@@ -10,7 +10,17 @@
 <body class="bg-gray-100">
 
   <!-- NAVBAR -->
-  <nav id="navbar" class="bg-white sticky top-0 z-50 transition-shadow">
+  <nav
+    id="navbar"
+    class="
+      bg-white
+      border-b
+      shadow-sm
+      sticky top-0 z-50
+      transition-shadow
+    "
+  >
+
     <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
         <!-- Logo -->
@@ -115,7 +125,59 @@
         </div>
       </div>
 
+      <!-- CARD -->
+      <div class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <img
+          src="/image/undraw_engineering-team_13ax.svg"
+          class="w-full h-40 object-contain rounded-t-lg"
+          alt="Kategori 1"
+        >
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2">Kategori 4</h3>
+          <p class="text-gray-600 mb-4">Deskripsi singkat tentang kategori 4.</p>
+          <a href="card1.html"
+             class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            Detail
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <img
+          src="/image/undraw_positive-attitude_xx3v.svg"
+          class="w-full h-40 object-contain rounded-t-lg"
+          alt="Kategori 2"
+        >
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2">Kategori 5</h3>
+          <p class="text-gray-600 mb-4">Deskripsi singkat tentang kategori 5.</p>
+          <a href="#"
+             class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            Detail
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <img
+          src="/image/undraw_team-spirit_18vw.svg"
+          class="w-full h-40 object-cover rounded-t-lg"
+          alt="Kategori 3"
+        >
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2">Kategori 6</h3>
+          <p class="text-gray-600 mb-4">Deskripsi singkat tentang kategori 6.</p>
+          <a href="#"
+             class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            Detail
+          </a>
+        </div>
+      </div>
+
     </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -152,9 +214,8 @@
         lines[2].classList.toggle("-translate-y-1.5");
     });
 
-
     window.addEventListener("scroll", () => {
-        nav.classList.toggle("shadow", window.scrollY > 10);
+      nav.classList.toggle("shadow-md", window.scrollY > 10);
     });
   </script>
 

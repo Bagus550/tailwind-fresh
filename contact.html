@@ -10,7 +10,16 @@
 <body class="bg-gray-100">
 
   <!-- NAVBAR -->
-  <nav id="navbar" class="bg-white sticky top-0 z-50 transition-shadow">
+  <nav
+    id="navbar"
+    class="
+      bg-white
+      border-b
+      shadow-sm
+      sticky top-0 z-50
+      transition-shadow
+    "
+  >
     <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
       <div class="text-xl font-bold text-blue-600">
@@ -160,7 +169,7 @@
     });
 
     window.addEventListener("scroll", () => {
-        nav.classList.toggle("shadow", window.scrollY > 10);
+      nav.classList.toggle("shadow-md", window.scrollY > 10);
     });
   </script>
 

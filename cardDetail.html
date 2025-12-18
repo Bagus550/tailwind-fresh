@@ -1,121 +1,193 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detail</title>
-  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="output.css" />
 </head>
 
 <body class="bg-gray-100">
 
   <!-- NAVBAR -->
-  <nav
-    id="navbar"
-    class="
-      bg-white
-      shadow-sm
-      sticky top-0 z-50
-      transition-shadow
-    "
-  >
-
+  <nav id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-shadow">
     <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+      <div class="text-xl font-bold text-blue-600">BagusDev</div>
 
-        <!-- Logo -->
-        <div class="text-xl font-bold text-blue-600">
-            BagusDev
-        </div>
+      <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      </button>
 
-        <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
-            <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-            <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-            <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-        </button>
-
-      <!-- Menu Desktop -->
       <div class="hidden md:flex gap-6 text-gray-600">
         <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
         <a href="about.html" class="hover:text-blue-600">About</a>
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </div>
-
     </div>
 
-    <!-- Menu Mobile -->
-    <div
-        id="mobileMenu"
-        class="
-            md:hidden
-            overflow-hidden
-            max-h-0
-            transition-all duration-300 ease-in-out
-        "
-    >
-
-        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-            <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
-            <a href="about.html" class="hover:text-blue-600">About</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact</a>
-        </div>
+    <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+      <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+        <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </div>
     </div>
   </nav>
 
   <!-- HEADER -->
   <header class="bg-blue-600 text-white py-16">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">
-        Detail tiap Card di Dashboard akan tampil disini
-      </h1>
-      <p class="text-lg text-blue-100">
-        Informasi lengkap dan detail tentang kategori yang ada di Dashboard.
-      </p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Detail Kategori</h1>
+      <p class="text-lg text-blue-100">Klik gambar untuk lihat preview full.</p>
     </div>
   </header>
 
   <!-- CONTENT -->
-  <main class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+  <main class="max-w-6xl mx-auto px-4 py-12 space-y-16">
 
-    <!-- Text -->
+  <!-- PROJECT ITEM -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+
+    <!-- GALLERY -->
+    <div class="space-y-6">
+
+      <!-- Main Image -->
+      <figure class="space-y-2">
+        <img
+          class="previewImg cursor-pointer rounded-lg shadow-lg w-full"
+          src="image/ilustrasi.jpg"
+          alt="Proyek Website Kegiatan"
+        />
+        <figcaption class="text-sm text-gray-500 text-center">
+          Tampilan utama website kegiatan
+        </figcaption>
+      </figure>
+
+      <!-- Thumbnails -->
+      <div class="grid grid-cols-3 gap-4">
+        <figure class="text-center space-y-1">
+          <img class="previewImg cursor-pointer rounded-md shadow"
+               src="image/ilustrasi.jpg">
+          <figcaption class="text-xs text-gray-500">Halaman dashboard</figcaption>
+        </figure>
+
+        <figure class="text-center space-y-1">
+          <img class="previewImg cursor-pointer rounded-md shadow"
+               src="image/ilustrasi.jpg">
+          <figcaption class="text-xs text-gray-500">Form input</figcaption>
+        </figure>
+
+        <figure class="text-center space-y-1">
+          <img class="previewImg cursor-pointer rounded-md shadow"
+               src="image/ilustrasi.jpg">
+          <figcaption class="text-xs text-gray-500">Detail kegiatan</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
     <div class="flex flex-col justify-center">
-      <h2 class="text-2xl font-bold mb-4 text-gray-800">
-        Tentang Kategori
+      <h2 class="text-2xl font-bold text-gray-800 mb-3">
+        Website Manajemen Kegiatan
       </h2>
+
       <p class="text-gray-700 mb-4">
-        "Kategori berisi produk atau layanan unggulan yang dirancang
-        untuk memenuhi kebutuhan pengguna secara efisien dan modern."
-      </p>
-      <p class="text-gray-700 mb-6">
-        "Dengan pendekatan desain yang rapi dan performa optimal,
-        kategori ini cocok untuk pengguna yang mengutamakan kualitas
-        dan kemudahan penggunaan."
+        Proyek ini merupakan website untuk mengelola data kegiatan,
+        mulai dari input, tampilan dashboard, hingga halaman detail.
       </p>
 
-      <a href="dashboard.html"
-         class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded
-                hover:bg-blue-700 transition">
-        ← Kembali ke Home
+      <p class="text-gray-600 mb-6 text-sm">
+        Teknologi: HTML, Tailwind CSS, JavaScript
+      </p>
+
+      <a href="#"
+         class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+        Lihat Detail Proyek →
       </a>
     </div>
 
-    <!-- Image -->
-    <div class="flex justify-center items-center">
-      <img
-        src="image/undraw_engineering-team_13ax.svg"
-        alt="Kategori 1"
-        class="rounded-lg shadow-lg w-full md:w-4/5 object-cover"
-      >
+  </section>
+
+  <!-- PROJECT ITEM -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+
+    <!-- GALLERY -->
+    <div class="space-y-6">
+
+      <!-- Main Image -->
+      <figure class="space-y-2">
+        <img
+          class="previewImg cursor-pointer rounded-lg shadow-lg w-full"
+          src="image/ilustrasi.jpg"
+          alt="Proyek Website Kegiatan"
+        />
+        <figcaption class="text-sm text-gray-500 text-center">
+          Tampilan utama website kegiatan
+        </figcaption>
+      </figure>
+
+      <!-- Thumbnails -->
+      <div class="grid grid-cols-3 gap-4">
+        <figure class="text-center space-y-1">
+          <img class="previewImg cursor-pointer rounded-md shadow"
+               src="image/ilustrasi.jpg">
+          <figcaption class="text-xs text-gray-500">Halaman dashboard</figcaption>
+        </figure>
+
+        <figure class="text-center space-y-1">
+          <img class="previewImg cursor-pointer rounded-md shadow"
+               src="image/ilustrasi.jpg">
+          <figcaption class="text-xs text-gray-500">Form input</figcaption>
+        </figure>
+
+        <figure class="text-center space-y-1">
+          <img class="previewImg cursor-pointer rounded-md shadow"
+               src="image/ilustrasi.jpg">
+          <figcaption class="text-xs text-gray-500">Detail kegiatan</figcaption>
+        </figure>
+      </div>
     </div>
 
-  </main>
+    <!-- DESCRIPTION -->
+    <div class="flex flex-col justify-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-3">
+        Website Manajemen Kegiatan
+      </h2>
+
+      <p class="text-gray-700 mb-4">
+        Proyek ini merupakan website untuk mengelola data kegiatan,
+        mulai dari input, tampilan dashboard, hingga halaman detail.
+      </p>
+
+      <p class="text-gray-600 mb-6 text-sm">
+        Teknologi: HTML, Tailwind CSS, JavaScript
+      </p>
+
+      <a href="#"
+         class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+        Lihat Detail Proyek →
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+
+  <!-- MODAL PREVIEW -->
+  <div id="imageModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+    <div class="relative max-w-4xl w-full px-4">
+      <button id="closeModal" class="absolute -top-10 right-0 text-white text-3xl">&times;</button>
+      <img id="modalImg" class="w-full rounded-lg shadow-2xl bg-white" />
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="bg-white border-t mt-10">
     <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-gray-500 text-sm">
-        &copy; 2025 BagusDev. All rights reserved.
-      </p>
+      <p class="text-gray-500 text-sm">&copy; 2025 BagusDev</p>
       <div class="flex gap-4 text-gray-500">
         <a href="#" class="hover:text-blue-600">Privacy</a>
         <a href="#" class="hover:text-blue-600">Terms</a>
@@ -132,22 +204,45 @@
     const nav = document.getElementById("navbar");
 
     btn.addEventListener("click", () => {
-        menu.classList.toggle("max-h-0");
-        menu.classList.toggle("max-h-screen");
+      menu.classList.toggle("max-h-0");
+      menu.classList.toggle("max-h-screen");
 
-        lines[0].classList.toggle("rotate-45");
-        lines[0].classList.toggle("translate-y-1.5");
-
-        lines[1].classList.toggle("opacity-0");
-
-        lines[2].classList.toggle("-rotate-45");
-        lines[2].classList.toggle("-translate-y-1.5");
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-1.5");
+      lines[1].classList.toggle("opacity-0");
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-1.5");
     });
 
     window.addEventListener("scroll", () => {
       nav.classList.toggle("shadow", window.scrollY > 10);
     });
-  </script>
 
+    // IMAGE PREVIEW
+    const previewImages = document.querySelectorAll(".previewImg");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+
+    previewImages.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modalImg.src = img.src;
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
 </body>
 </html>

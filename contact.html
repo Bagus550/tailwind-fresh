@@ -157,29 +157,30 @@
   </footer>
 
   <!-- SCRIPT -->
-  <script>
+  <script defer>
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("mobileMenu");
     const lines = btn.querySelectorAll("span");
     const nav = document.getElementById("navbar");
 
     btn.addEventListener("click", () => {
-        menu.classList.toggle("max-h-0");
-        menu.classList.toggle("max-h-screen");
+      menu.classList.toggle("max-h-0");
+      menu.classList.toggle("max-h-screen");
 
-        lines[0].classList.toggle("rotate-45");
-        lines[0].classList.toggle("translate-y-1.5");
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-1.5");
 
-        lines[1].classList.toggle("opacity-0");
+      lines[1].classList.toggle("opacity-0");
 
-        lines[2].classList.toggle("-rotate-45");
-        lines[2].classList.toggle("-translate-y-1.5");
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-1.5");
     });
 
     window.addEventListener("scroll", () => {
       nav.classList.toggle("shadow-md", window.scrollY > 10);
     });
   </script>
+
 
   <script defer src="https://cdn.jsdelivr.net/npm/emailjs@3/dist/email.min.js"></script>
 

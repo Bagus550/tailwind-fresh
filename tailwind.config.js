@@ -1,9 +1,8 @@
 export default {
   content: [
-  "./*.html",
-  "./src/**/*.html",
-  "./src/**/*.{js,ts}"
-],
+    "./**/*.html",
+    "./**/*.{js,ts}"
+  ],
   theme: {
     extend: {},
   },

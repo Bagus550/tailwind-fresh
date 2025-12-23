@@ -37,7 +37,7 @@
   </nav>
 
   <!-- HEADER -->
-  <header class="relative bg-cover bg-center py-16" style="background-image: url('../../image/wisataKuliner.jpg');">
+  <header class="relative bg-cover bg-center py-16" style="background-image: url('../../image/IoT.jpg');">
     <!-- Overlay Gelap -->
     <div class="absolute inset-0 bg-black/50"></div>
 
@@ -47,56 +47,10 @@
     </div>
   </header>
 
-
-  <!-- CONTENT -->
-  <main class="max-w-6xl mx-auto px-4 py-12 space-y-16">
-
-  <!-- PROJECT ITEM -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
-
-    <!-- GALLERY -->
-    <div class="space-y-6">
-
-      <!-- Main Image -->
-      <figure class="space-y-2">
-        <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
-          <img
-            class="previewImg cursor-pointer w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-110"
-            src="../../image/ilustrasi.jpg"
-            alt="Proyek Website Kegiatan"
-          />
-        </div>
-        <figcaption class="text-sm text-gray-500 text-center">
-          Ini adalah contoh caption gambar
-        </figcaption>
-      </figure>
-
-    </div>
-
-    <!-- DESCRIPTION -->
-    <div class="flex flex-col justify-center">
-      <h2 class="text-2xl font-bold text-gray-800 mb-3">
-        Ini adalah contoh judul detail
-      </h2>
-
-      <p class="text-gray-700 mb-4">
-        ini adalah contoh deskripsi singkat dari detail yang ada pada kategori. Deskripsi ini memberikan gambaran umum mengenai isi dari detail tersebut.
-      </p>
-
-      <p class="text-gray-600 mb-6 text-sm">
-        kata kunci : kata kunci 1, kata kunci 2, kata kunci 3
-      </p>
-
-      <a href="../artikel/#"
-         class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
-        Lihat Detail
-      </a>
-    </div>
-
-  </section>
-
-</main>
-
+  <main
+    id="projectContainer"
+    class="max-w-6xl mx-auto px-4 py-12 space-y-16"
+  ></main>
 
   <!-- MODAL PREVIEW -->
   <div id="imageModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
@@ -120,6 +74,89 @@
 
   <!-- SCRIPT -->
   <script>
+    const projects = [
+      {
+        title: "Sistem Monitoring Suhu & Kelembapan",
+        desc: "Sistem IoT untuk memantau suhu dan kelembapan ruangan secara realtime menggunakan sensor DHT dan mikrokontroler.",
+        keywords: "IoT, DHT11, ESP8266, Realtime",
+        image: "../../image/iot-monitoring.jpg",
+        caption: "Tampilan data suhu dan kelembapan pada dashboard",
+        link: "../artikel/iot-monitoring.html"
+      },
+      {
+        title: "Pendeteksi Kebocoran Gas",
+        desc: "Perangkat IoT berbasis sensor MQ-2 untuk mendeteksi kebocoran gas dan memberikan peringatan dini.",
+        keywords: "IoT, MQ-2, Gas Sensor, Safety",
+        image: "../../image/iot-gas.jpg",
+        caption: "Prototipe alat pendeteksi kebocoran gas",
+        link: "../artikel/iot-gas.html"
+      },
+      {
+        title: "Smart Lamp Berbasis Internet",
+        desc: "Lampu pintar yang dapat dikontrol melalui web menggunakan ESP32 dan relay sebagai aktuator.",
+        keywords: "IoT, ESP32, Relay, Web Control",
+        image: "../../image/iot-lamp.jpg",
+        caption: "Kontrol lampu melalui dashboard web",
+        link: "../artikel/iot-lamp.html"
+      },
+      {
+        title: "Sistem Monitoring Ketinggian Air",
+        desc: "Sistem IoT untuk memantau ketinggian air menggunakan sensor ultrasonik dan notifikasi peringatan.",
+        keywords: "IoT, Ultrasonic, Water Level, Monitoring",
+        image: "../../image/iot-water.jpg",
+        caption: "Pembacaan ketinggian air secara realtime",
+        link: "../artikel/iot-water.html"
+      }
+    ];
+
+    const container = document.getElementById("projectContainer");
+
+    projects.forEach(item => {
+      container.innerHTML += `
+        <section class="text-justify grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+
+          <!-- GALLERY -->
+          <div class="space-y-6">
+            <figure class="space-y-2">
+              <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+                <img
+                  class="previewImg cursor-pointer w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-110 blur-sm scale-105 transition duration-500"
+                  src="${item.image}"
+                  alt="${item.title}"
+                  loading="lazy"
+                  onload="this.classList.remove('blur-sm')"
+                />
+              </div>
+              <figcaption class="text-sm text-gray-500 text-center">
+                ${item.caption}
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- DESCRIPTION -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">
+              ${item.title}
+            </h2>
+
+            <p class="text-gray-700 mb-4">
+              ${item.desc}
+            </p>
+
+            <p class="text-gray-600 mb-6 text-sm">
+              kata kunci : ${item.keywords}
+            </p>
+
+            <a href="${item.link}"
+              class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+              Lihat Detail
+            </a>
+          </div>
+
+        </section>
+      `;
+    });
+
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("mobileMenu");
     const lines = btn.querySelectorAll("span");
@@ -141,18 +178,23 @@
     });
 
     // IMAGE PREVIEW
-    const previewImages = document.querySelectorAll(".previewImg");
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
     const closeModal = document.getElementById("closeModal");
 
-    previewImages.forEach(img => {
-      img.addEventListener("click", () => {
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-        modalImg.src = img.src;
+    function initImagePreview() {
+      const previewImages = document.querySelectorAll(".previewImg");
+
+      previewImages.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modalImg.src = img.src;
+        });
       });
-    });
+    }
+
+    initImagePreview();
 
     closeModal.addEventListener("click", () => {
       modal.classList.add("hidden");

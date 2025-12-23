@@ -174,18 +174,23 @@ renderKuliner();
     });
 
     // IMAGE PREVIEW
-    const previewImages = document.querySelectorAll(".previewImg");
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
     const closeModal = document.getElementById("closeModal");
 
-    previewImages.forEach(img => {
-      img.addEventListener("click", () => {
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-        modalImg.src = img.src;
+    function initImagePreview() {
+      const previewImages = document.querySelectorAll(".previewImg");
+
+      previewImages.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modalImg.src = img.src;
+        });
       });
-    });
+    }
+
+    initImagePreview();
 
     closeModal.addEventListener("click", () => {
       modal.classList.add("hidden");

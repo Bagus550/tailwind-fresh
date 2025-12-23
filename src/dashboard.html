@@ -134,8 +134,10 @@
           <div class="p-6">
             <img
               src="${item.image}"
-              class="w-full h-40 object-cover object-top rounded-t-lg"
+              class="w-full h-40 object-cover object-top rounded-t-lg blur-sm scale-105 transition duration-500"
               alt="${item.title}"
+              loading="lazy"
+              onload="this.classList.remove('blur-sm')"
             >
           </div>
 

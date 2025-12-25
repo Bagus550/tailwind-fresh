@@ -36,10 +36,10 @@
 
             <!-- Menu Desktop -->
             <div class="hidden md:flex gap-6 text-gray-600">
-                <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
+                <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
                 <a href="about.html" class="hover:text-blue-600">About</a>
                 <a href="contact.html" class="hover:text-blue-600">Contact</a>
-                <a href="blog.html" class="hover:text-blue-600">Blog</a>
+                <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
             </div>
 
         </div>
@@ -56,10 +56,10 @@
         >
 
             <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-                <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
+                <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
                 <a href="about.html" class="hover:text-blue-600">About</a>
                 <a href="contact.html" class="hover:text-blue-600">Contact</a>
-                <a href="blog.html" class="hover:text-blue-600">Blog</a>
+                <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
             </div>
         </div>
 
@@ -103,54 +103,82 @@
 
     <script>
         const blog = [
-            {
-                title:"",
-                desc:"",
-                image:"",
-                link:""
-            },
-            {
-                title:"",
-                desc:"",
-                image:"",
-                link:""
-            },
-            {
-                title:"",
-                desc:"",
-                image:"",
-                link:""
-            }
-        ];
+        {
+            title: "Belajar Tailwind CSS dari Nol",
+            desc: "Panduan santai buat kamu yang baru mulai styling pakai Tailwind CSS tanpa ribet.",
+            image: "https://tailwindcss.com/_next/static/media/card.7fed5563.jpg",
+            category: "CSS",
+            date: "12 Jan 2025",
+            link: "#"
+        },
+        {
+            title: "JavaScript Dasar yang Wajib Dipahami",
+            desc: "Konsep penting JavaScript biar kamu nggak cuma copy-paste kode.",
+            image: "https://baraka.uma.ac.id/wp-content/uploads/feature.png",
+            category: "JavaScript",
+            date: "15 Jan 2025",
+            link: "#"
+        },
+        {
+            title: "Tips Bikin Portfolio Web Keren",
+            desc: "Portfolio bukan soal rame, tapi jelas dan nunjukin skill kamu.",
+            image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800,h_445/https://blog.mostar.co.id/wp-content/uploads/2024/07/92599994_10055722-min-1024x569.jpg",
+            category: "Career",
+            date: "20 Jan 2025",
+            link: "#"
+        }
+    ];
 
-        const cardBlog = document.getElementById('cardBlog');
+    const cardBlog = document.getElementById("cardBlog");
 
-        categories.forEach(item => {
-            container.innerHTML += `
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-                <div class="p-6">
-                    <img
-                    src="${item.image}"
-                    class="w-full h-40 object-cover object-top rounded-t-lg blur-sm scale-105 transition duration-500"
-                    alt="${item.title}"
-                    loading="lazy"
-                    onload="this.classList.remove('blur-sm')"
+    blog.forEach(item => {
+        cardBlog.innerHTML += `
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group">
+                
+                <!-- Thumbnail -->
+                <div class="overflow-hidden">
+                    <img 
+                        src="${item.image}"
+                        alt="${item.title}"
+                        class="w-full h-48 object-cover group-hover:scale-105 transition duration-500 blur-sm scale-105 transition duration-500"
+                        loading="lazy" 
+                        onload="this.classList.remove('blur-sm')"
                     >
                 </div>
 
-                <div class="px-6 pb-6">
-                    <h3 class="text-lg font-semibold mb-2">${item.title}</h3>
-                    <p class="text-gray-600 mb-4">${item.desc}</p>
-                    <a
-                    href="${item.link}"
-                    class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+                <!-- Content -->
+                <div class="p-6">
+                    
+                    <!-- Meta -->
+                    <div class="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                        <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-full font-medium">
+                            ${item.category}
+                        </span>
+                        <span>${item.date}</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-lg font-semibold text-gray-800 leading-snug mb-2 line-clamp-2">
+                        ${item.title}
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-3">
+                        ${item.desc}
+                    </p>
+
+                    <!-- CTA -->
+                    <a 
+                        href="${item.link}"
+                        class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:gap-2 transition-all"
                     >
-                    Detail
+                        Read more
+                        <span>→</span>
                     </a>
                 </div>
-                </div>
-            `;
-        });
+            </article>
+        `;
+    });
 
         const btn = document.getElementById("menuBtn");
         const menu = document.getElementById("mobileMenu");
@@ -171,9 +199,10 @@
         });
 
         window.addEventListener("scroll", () => {
-          nav.classList.toggle("shadow-md", window.scrollY > 10);
+            nav.classList.toggle("shadow-md", window.scrollY > 10);
         });
     </script>
+
     
 </body>
 </html>

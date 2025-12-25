@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR -->
+    <nav
+        id = "navbar"
+        class="
+          bg-white
+          shadow-sm
+          sticky top-0 z-50
+          transition-shadow
+        "
+    >
+
+        <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+
+            <!--Logo-->
+            <div class="text-xl font-bold text-blue-600">
+                BagusDev
+            </div>
+
+            <!-- Hamburger -->
+            <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            </button>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex gap-6 text-gray-600">
+                <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
+                <a href="about.html" class="hover:text-blue-600">About</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="blog.html" class="hover:text-blue-600">Blog</a>
+            </div>
+
+        </div>
+
+        <!-- Menu Mobile -->
+        <div
+            id="mobileMenu"
+            class="
+                md:hidden
+                overflow-hidden
+                max-h-0
+                transition-all duration-300 ease-in-out
+            "
+        >
+
+            <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+                <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
+                <a href="about.html" class="hover:text-blue-600">About</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact</a>
+                <a href="blog.html" class="hover:text-blue-600">Blog</a>
+            </div>
+        </div>
+
+    </nav>
+
+     <!--HEADER-->
+    <header class="bg-blue-600 text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+
+        <h1 class="text-4xl md:text-4xl font-bold mb-4">
+            Blog
+        </h1>
+
+        <p class="text-blue-100 text-sm max-w-2xl mx-auto">
+            Temukan berbagai artikel menarik seputar teknologi, pengembangan web, tips coding, dan tren terbaru di dunia IT. Dapatkan wawasan baru dan inspirasi untuk proyek Anda berikutnya di BagusDev Blog.
+        </p>
+
+        </div>
+    </header>
+    
+    <main class="max-w-6xl mx-auto px-4 py-6">
+        <div
+        id="cardBlog"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        ></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t mt-10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 BagusDev. All rights reserved.
+        </p>
+        <div class="flex gap-4 text-gray-500">
+            <a href="#" class="hover:text-blue-600">Privacy</a>
+            <a href="#" class="hover:text-blue-600">Terms</a>
+            <a href="#" class="hover:text-blue-600">Contact</a>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        const blog = [
+            {
+                title:"",
+                desc:"",
+                image:"",
+                link:""
+            },
+            {
+                title:"",
+                desc:"",
+                image:"",
+                link:""
+            },
+            {
+                title:"",
+                desc:"",
+                image:"",
+                link:""
+            }
+        ];
+
+        const cardBlog = document.getElementById('cardBlog');
+
+        categories.forEach(item => {
+            container.innerHTML += `
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+                <div class="p-6">
+                    <img
+                    src="${item.image}"
+                    class="w-full h-40 object-cover object-top rounded-t-lg blur-sm scale-105 transition duration-500"
+                    alt="${item.title}"
+                    loading="lazy"
+                    onload="this.classList.remove('blur-sm')"
+                    >
+                </div>
+
+                <div class="px-6 pb-6">
+                    <h3 class="text-lg font-semibold mb-2">${item.title}</h3>
+                    <p class="text-gray-600 mb-4">${item.desc}</p>
+                    <a
+                    href="${item.link}"
+                    class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+                    >
+                    Detail
+                    </a>
+                </div>
+                </div>
+            `;
+        });
+
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("mobileMenu");
+        const lines = btn.querySelectorAll("span");
+        const nav = document.getElementById("navbar");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("max-h-0");
+            menu.classList.toggle("max-h-screen");
+
+            lines[0].classList.toggle("rotate-45");
+            lines[0].classList.toggle("translate-y-1.5");
+
+            lines[1].classList.toggle("opacity-0");
+
+            lines[2].classList.toggle("-rotate-45");
+            lines[2].classList.toggle("-translate-y-1.5");
+        });
+
+        window.addEventListener("scroll", () => {
+          nav.classList.toggle("shadow-md", window.scrollY > 10);
+        });
+    </script>
+    
+</body>
+</html>

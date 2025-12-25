@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../../output.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR -->
+    <nav
+        id = "navbar"
+        class="
+          bg-white
+          shadow-sm
+          sticky top-0 z-50
+          transition-shadow
+        "
+    >
+
+        <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+
+            <!--Logo-->
+            <div class="text-xl font-bold text-blue-600">
+                BagusDev
+            </div>
+
+            <!-- Hamburger -->
+            <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            </button>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex gap-6 text-gray-600">
+                <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+                <a href="../blog.html" class="text-blue-600 font-semibold">Blog</a>
+                <a href="../about.html" class="hover:text-blue-600">About</a>
+                <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+            </div>
+
+        </div>
+
+        <!-- Menu Mobile -->
+        <div
+            id="mobileMenu"
+            class="
+                md:hidden
+                overflow-hidden
+                max-h-0
+                transition-all duration-300 ease-in-out
+            "
+        >
+
+            <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+                <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+                <a href="../blog.html" class="text-blue-600 font-semibold">Blog</a>
+                <a href="../about.html" class="hover:text-blue-600">About</a>
+                <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+
+    </nav>
+
+     <!--HEADER-->
+    <header class="bg-blue-600 text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+
+        <h1 class="text-4xl md:text-4xl font-bold mb-4">
+            Blog
+        </h1>
+
+        <p class="text-blue-100 text-sm max-w-2xl mx-auto">
+            Temukan berbagai artikel menarik seputar teknologi, pengembangan web, tips coding, dan tren terbaru di dunia IT. Dapatkan wawasan baru dan inspirasi untuk proyek Anda berikutnya di BagusDev Blog.
+        </p>
+
+        </div>
+    </header>
+    
+    <main class="max-w-6xl mx-auto px-4 py-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <!-- BLOG LIST -->
+            <section class="lg:col-span-3">
+            <div
+                id="cardBlog"
+                class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            ></div>
+            </section>
+
+            <!-- SIDEBAR -->
+            <aside class="hidden lg:block">
+            <div class="space-y-8 sticky top-24">
+
+                <!-- Search -->
+                <div class="bg-white rounded-xl shadow-sm p-5">
+                <h4 class="font-semibold mb-3 text-gray-800">Search</h4>
+                <input
+                    type="text"
+                    placeholder="Cari artikel..."
+                    class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                </div>
+
+                <!-- Categories -->
+                <div class="bg-white rounded-xl shadow-sm p-5">
+                <h4 class="font-semibold mb-3 text-gray-800">Kategori</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="hover:text-blue-600 cursor-pointer">CSS</li>
+                    <li class="hover:text-blue-600 cursor-pointer">JavaScript</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Career</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Tutorial</li>
+                </ul>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="bg-white rounded-xl shadow-sm p-5">
+                <h4 class="font-semibold mb-4 text-gray-800">Artikel Terbaru</h4>
+
+                <div class="space-y-4">
+                    <a href="#" class="block text-sm text-gray-700 hover:text-blue-600">
+                    Belajar Tailwind CSS dari Nol
+                    </a>
+                    <a href="#" class="block text-sm text-gray-700 hover:text-blue-600">
+                    JavaScript Dasar yang Wajib Dipahami
+                    </a>
+                    <a href="#" class="block text-sm text-gray-700 hover:text-blue-600">
+                    Tips Bikin Portfolio Web
+                    </a>
+                </div>
+                </div>
+
+            </div>
+            </aside>
+
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t mt-10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 BagusDev. All rights reserved.
+        </p>
+        <div class="flex gap-4 text-gray-500">
+            <a href="#" class="hover:text-blue-600">Privacy</a>
+            <a href="#" class="hover:text-blue-600">Terms</a>
+            <a href="#" class="hover:text-blue-600">Contact</a>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        const blog = [
+            {
+                title: "Belajar Tailwind CSS dari Nol",
+                desc: "Panduan santai buat kamu yang baru mulai styling pakai Tailwind CSS tanpa ribet.",
+                image: "https://tailwindcss.com/_next/static/media/card.7fed5563.jpg",
+                category: "CSS",
+                date: "12 Jan 2025",
+                link: "../artikel/belajar-tailwind.html"
+            },
+            {
+                title: "JavaScript Dasar yang Wajib Dipahami",
+                desc: "Konsep penting JavaScript biar kamu nggak cuma copy-paste kode.",
+                image: "https://baraka.uma.ac.id/wp-content/uploads/feature.png",
+                category: "JavaScript",
+                date: "15 Jan 2025",
+                link: "#"
+            },
+            {
+                title: "Tips Bikin Portfolio Web Keren",
+                desc: "Portfolio bukan soal rame, tapi jelas dan nunjukin skill kamu.",
+                image: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800,h_445/https://blog.mostar.co.id/wp-content/uploads/2024/07/92599994_10055722-min-1024x569.jpg",
+                category: "Career",
+                date: "20 Jan 2025",
+                link: "#"
+            }
+        ];
+
+        const cardBlog = document.getElementById("cardBlog");
+
+        blog.forEach(item => {
+            cardBlog.innerHTML += `
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group flex flex-col h-full">
+                    
+                    <!-- Thumbnail -->
+                    <div class="overflow-hidden">
+                        <img 
+                            src="${item.image}"
+                            alt="${item.title}"
+                            class="w-full h-48 object-cover blur-sm group-hover:scale-105 transition duration-500"
+                            loading="lazy"
+                            onload="this.classList.remove('blur-sm')"
+                        >
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-6 flex flex-col flex-1">
+                        
+                        <!-- Meta -->
+                        <div class="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded-full font-medium">
+                                ${item.category}
+                            </span>
+                            <span>${item.date}</span>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-800 leading-snug mb-2 line-clamp-2">
+                            ${item.title}
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="text-sm text-gray-600 mb-6 line-clamp-3">
+                            ${item.desc}
+                        </p>
+
+                        <!-- CTA (nempel bawah) -->
+                        <a 
+                            href="${item.link}"
+                            class="mt-auto inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:gap-2 transition-all"
+                        >
+                            Read more
+                            <span>→</span>
+                        </a>
+                    </div>
+                </article>
+            `;
+        });
+
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("mobileMenu");
+        const lines = btn.querySelectorAll("span");
+        const nav = document.getElementById("navbar");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("max-h-0");
+            menu.classList.toggle("max-h-screen");
+
+            lines[0].classList.toggle("rotate-45");
+            lines[0].classList.toggle("translate-y-1.5");
+
+            lines[1].classList.toggle("opacity-0");
+
+            lines[2].classList.toggle("-rotate-45");
+            lines[2].classList.toggle("-translate-y-1.5");
+        });
+
+        window.addEventListener("scroll", () => {
+            nav.classList.toggle("shadow-md", window.scrollY > 10);
+        });
+    </script>
+
+    
+</body>
+</html>

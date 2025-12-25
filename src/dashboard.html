@@ -38,10 +38,9 @@
         <!-- Menu Desktop -->
         <div class="hidden md:flex gap-6 text-gray-600">
             <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
+            <a href="../../blog.html" class="hover:text-blue-600">Blog</a>
             <a href="about.html" class="hover:text-blue-600">About</a>
             <a href="contact.html" class="hover:text-blue-600">Contact</a>
-            <a href="blog.html"
-            class="hover:text-blue-600">Blog</a>
         </div>
 
     </div>
@@ -59,10 +58,9 @@
 
         <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
             <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
+            <a href="../../blog.html" class="hover:text-blue-600">Blog</a>
             <a href="about.html" class="hover:text-blue-600">About</a>
             <a href="contact.html" class="hover:text-blue-600">Contact</a>
-            <a href="blog.html"
-            class="hover:text-blue-600">Blog</a>
         </div>
     </div>
 
@@ -134,30 +132,54 @@
 
     categories.forEach(item => {
       container.innerHTML += `
-        <div class="bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
-          <div class="p-6">
+        <article
+          class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group flex flex-col h-full"
+        >
+
+          <!-- Thumbnail -->
+          <div class="overflow-hidden">
             <img
               src="${item.image}"
-              class="w-full h-40 object-cover object-top rounded-t-lg blur-sm scale-105 transition duration-500"
               alt="${item.title}"
+              class="w-full h-48 object-cover blur-sm group-hover:scale-105 transition duration-500"
               loading="lazy"
               onload="this.classList.remove('blur-sm')"
             >
           </div>
 
-          <div class="px-6 pb-6">
-            <h3 class="text-lg font-semibold mb-2">${item.title}</h3>
-            <p class="text-gray-600 mb-4">${item.desc}</p>
+          <!-- Content -->
+          <div class="p-6 flex flex-col flex-1">
+            
+            <!-- Badge -->
+            <span class="inline-block mb-3 text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-600">
+              Dashboard
+            </span>
+
+            <!-- Title -->
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              ${item.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-sm text-gray-600 mb-6">
+              ${item.desc}
+            </p>
+
+            <!-- CTA (nempel bawah) -->
             <a
               href="${item.link}"
-              class="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+              class="mt-auto inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:gap-2 transition-all"
             >
-              Detail
+              Lihat Detail
+              <span>→</span>
             </a>
+
           </div>
-        </div>
+        </article>
       `;
     });
+
+
     
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("mobileMenu");

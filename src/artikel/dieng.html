@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail</title>
+
+  <link rel="icon" type="image/png" href="../../image/logo-white.ico">
+  <link rel="stylesheet" href="../../output.css" />
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR -->
+  <nav id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-shadow">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+      <div class="text-xl font-bold text-blue-600">BagusDev</div>
+
+      <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      </button>
+
+      <div class="hidden md:flex gap-6 text-gray-600">
+        <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+        <a href="../blog.html" class="hover:text-blue-600">Blog</a>
+        <a href="../about.html" class="hover:text-blue-600">About</a>
+        <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+      <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+        <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+        <a href="../blog.html" class="hover:text-blue-600">Blog</a>
+        <a href="../about.html" class="hover:text-blue-600">About</a>
+        <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="relative bg-cover bg-center py-24" style="background-image: url('../../image/dieng.jpg');">
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <span class="inline-block mb-4 px-4 py-1 text-sm bg-blue-600/90 text-white rounded-full">
+        Dataran Tinggi Dieng
+      </span>
+
+      <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+        Kawah Sikidang & Pesona Alam Dieng
+      </h1>
+
+      <p class="text-blue-100 text-sm md:text-base max-w-2xl mx-auto">
+        Iklim sejuk, pemandangan menakjubkan, dan budaya unik di dataran tinggi Dieng, Jawa Tengah.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 py-16 space-y-16">
+
+    <!-- ARTICLE -->
+    <article class="space-y-6 text-gray-700 leading-relaxed">
+
+      <p>
+        Dataran Tinggi Dieng adalah destinasi wisata alam yang memukau di Jawa Tengah.
+        Terletak di ketinggian sekitar 2.000 meter di atas permukaan laut,
+        Dieng menawarkan pemandangan alam yang spektakuler, udara sejuk,
+        dan budaya yang kaya.
+      </p>
+
+      <p>
+        Salah satu daya tarik utama Dieng adalah Kawah Sikidang,
+        sebuah kawah vulkanik yang masih aktif dengan aktivitas geotermal yang menakjubkan.
+        Pengunjung dapat melihat semburan uap panas dan kolam lumpur mendidih yang
+        menciptakan pemandangan unik dan menakjubkan.
+      </p>
+
+      <p>
+        Selain keindahan alamnya, Dieng juga dikenal dengan budaya lokalnya yang kaya.
+        Festival Dieng Culture Festival (DCF) yang diadakan setiap tahun menampilkan
+        tarian tradisional, musik, dan ritual unik yang mencerminkan warisan budaya masyarakat Dieng.
+      </p>
+
+      <p class="text-sm text-gray-500 pt-4">
+        <strong>Kata kunci:</strong> kawah sikidang, dataran tinggi dieng, alam dieng, budaya dieng
+      </p>
+
+      <p class="text-sm">
+        📍 Lokasi:
+        <a href="https://maps.app.goo.gl/Y43QXbknSJa6GhmG7"
+          class="text-blue-600 hover:underline">
+          Kawah Sikidang, Dataran Tinggi Dieng, Jawa Tengah
+        </a>
+      </p>
+
+    </article>
+
+    <!-- GALLERY -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6 text-gray-800">
+        Galeri
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <figure class="space-y-2 sm:col-span-2">
+          <div class="aspect-[16/9] overflow-hidden rounded-xl shadow">
+            <img
+              class="previewImg cursor-pointer w-full h-full object-cover hover:scale-105 transition"
+              src="/image/dieng.jpg"
+            >
+          </div>
+          <figcaption class="text-sm text-gray-500 text-center">
+            Pemandangan indah di Kawasan kawah Sikidang Dataran Tinggi Dieng
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+</main>
+
+
+    <!-- MODAL PREVIEW -->
+    <div id="imageModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+        <div class="relative max-w-4xl w-full px-4">
+        <button id="closeModal" class="absolute -top-10 right-0 text-white text-3xl">&times;</button>
+        <img id="modalImg" class="w-full max-h-[90vh] rounded-lg shadow-2xl object-contain bg-white" />
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t mt-10">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">&copy; 2025 BagusDev</p>
+        <div class="flex gap-4 text-gray-500">
+            <a href="#" class="hover:text-blue-600">Privacy</a>
+            <a href="#" class="hover:text-blue-600">Terms</a>
+            <a href="#" class="hover:text-blue-600">Contact</a>
+        </div>
+        </div>
+    </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    const lines = btn.querySelectorAll("span");
+    const nav = document.getElementById("navbar");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("max-h-0");
+      menu.classList.toggle("max-h-screen");
+
+      lines[0].classList.toggle("rotate-45");
+      lines[0].classList.toggle("translate-y-1.5");
+      lines[1].classList.toggle("opacity-0");
+      lines[2].classList.toggle("-rotate-45");
+      lines[2].classList.toggle("-translate-y-1.5");
+    });
+
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("shadow", window.scrollY > 10);
+    });
+
+    // IMAGE PREVIEW
+    const previewImages = document.querySelectorAll(".previewImg");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+
+    previewImages.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modalImg.src = img.src;
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
+</body>
+</html>

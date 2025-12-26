@@ -1,7 +1,7 @@
 {
   "name": "tailwind-fresh",
   "version": "1.0.0",
-  "type" :"module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -i input.css -o output.css --watch",
@@ -13,6 +13,7 @@
   "description": "",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
     "tailwindcss": "^4.1.18"
   }
 }

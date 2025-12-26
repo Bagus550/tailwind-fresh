@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Belajar Tailwind CSS dari Nol",
+    "desc": "Panduan santai buat kamu yang baru mulai styling pakai Tailwind CSS tanpa ribet.",
+    "image": "https://tailwindcss.com/_next/static/media/card.7fed5563.jpg",
+    "category": "CSS",
+    "sec-category": "Tutorial",
+    "date": "12 Jan 2025",
+    "link": "artikel/belajar-tailwind.html"
+  },
+  {
+    "title": "JavaScript Dasar yang Wajib Dipahami",
+    "desc": "Konsep penting JavaScript biar kamu nggak cuma copy-paste kode.",
+    "image": "https://baraka.uma.ac.id/wp-content/uploads/feature.png",
+    "category": "JavaScript",
+    "date": "15 Jan 2025",
+    "link": "#"
+  },
+  {
+    "title": "Tips Bikin Portfolio Web Keren",
+    "desc": "Portfolio bukan soal rame, tapi jelas dan nunjukin skill kamu.",
+    "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800,h_445/https://blog.mostar.co.id/wp-content/uploads/2024/07/92599994_10055722-min-1024x569.jpg",
+    "category": "Career",
+    "sec-category": "Design",
+    "date": "20 Jan 2025",
+    "link": "#" 
+}
+]

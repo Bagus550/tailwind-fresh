@@ -36,78 +36,373 @@
             <span>25 Desember 2025</span>
             </div>
 
-            <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">
-            Belajar CSS dari Nol Sampai Bisa Layouting
+            <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-10">
+                Belajar CSS dari Nol
             </h1>
 
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                Fundamental CSS untuk Pemula
+            </h2>
+
             <p class="text-gray-600 text-base leading-relaxed">
-            CSS adalah fondasi utama dalam membangun tampilan website.  
-            Artikel ini membahas dasar CSS secara santai dan mudah dipahami untuk pemula.
+                Sebelum ngomongin layouting, Flexbox, atau Grid, ada satu hal yang sering disepelekan: fundamental CSS. 
+                Padahal, semua konsep lanjutan itu berdiri di atas dasar yang sama. 
+                Kalau dasarnya goyah, makin jauh belajarnya malah makin bingung.
             </p>
+
         </header>
 
         <!-- THUMBNAIL -->
         <div class="mb-12 rounded-xl overflow-hidden shadow-sm">
             <img
-            src="https://tailwindcss.com/_next/static/media/card.7fed5563.jpg"
+            src="https://codelatte.org/wp-content/uploads/2018/11/CSS.jpg"
             alt="Belajar CSS"
             class="w-full object-cover"
             >
         </div>
 
         <!-- ARTICLE CONTENT -->
-        <article class="space-y-8 text-gray-700 leading-relaxed">
+        <article class="space-y-8 text-gray-700 leading-relaxed mb-10">
 
-            <p class="text-justify indent-8">
-                CSS (Cascading Style Sheets) digunakan untuk mengatur tampilan dan layout
-                halaman web. Tanpa CSS, website hanya akan menampilkan teks polos tanpa
-                struktur visual yang menarik.
+            <p class="text-justify">
+                Di tulisan ini, kita fokus ke konsep dasar CSS, 
+                lengkap dengan istilah dan pengertian yang emang 
+                dipakai secara resmi, tapi dijelasin dengan bahasa 
+                manusia.
             </p>
 
             <section class="space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800">
-                    Apa itu CSS?
+                    Pengertian CSS
                 </h2>
 
-                <p class="text-justify indent-8">
-                    CSS memungkinkan kita mengatur warna, ukuran font, jarak antar elemen,
-                    hingga layout responsif. CSS bekerja dengan cara menargetkan elemen HTML
-                    lalu memberikan aturan gaya tertentu.
+                <p class="text-justify">
+                    CSS adalah singkatan dari <i>Cascading Style Sheets</i>. Menurut World Wide Web Consortium (W3C), CSS merupakan bahasa <i>stylesheet</i> yang digunakan untuk mendeskripsikan bagaimana elemen-elemen HTML ditampilkan di layar, kertas, maupun media lain. Dengan kata lain, CSS bertanggung jawab penuh atas tampilan visual sebuah halaman web.
+                </p>
+                <p class="text-justify">
+                    Kalau HTML berfungsi sebagai struktur atau kerangka konten, maka CSS berperan sebagai pengatur estetika, mulai dari warna, ukuran teks, jarak antar elemen, hingga tata letak halaman. Tanpa CSS, halaman web tetap bisa diakses, tetapi tampilannya sangat minimal dan kurang nyaman dilihat.
                 </p>
             </section>
 
             <section class="space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800">
-                    Kenapa CSS Itu Penting?
+                    Struktur Dasar Penulisan CSS
                 </h2>
 
-                <p class="text-justify indent-8">
-                    Dengan CSS, kita bisa membuat website terlihat profesional, konsisten,
-                    dan nyaman digunakan. Hampir semua website modern mengandalkan CSS
-                    untuk pengalaman pengguna yang baik.
+                <p class="text-justify">
+                    CSS ditulis menggunakan pola dasar yang konsisten, yaitu <i>selector</i>, <i>property</i>, dan <i>value</i>. Struktur ini menjadi fondasi dari seluruh aturan CSS yang ada.
+                </p>
+
+    <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>selector {
+    property: value;
+}</code>
+</pre>
+                <p class="text-justify">
+                    Struktur ini menunjukkan bahwa CSS bekerja dengan cara memilih elemen tertentu, lalu menerapkan aturan gaya ke elemen tersebut. Konsep ini penting dipahami sejak awal karena semua penulisan CSS, baik yang sederhana maupun kompleks, selalu mengikuti pola ini.
                 </p>
             </section>
 
             <section class="space-y-4">
                 <h3 class="text-xl font-semibold text-gray-800">
-                    Manfaat Utama CSS
+                    Selector dalam CSS
                 </h3>
 
+                <p class="text-justify">
+                    <i>Selector</i> adalah bagian dari CSS yang menentukan elemen HTML mana yang akan diberikan gaya. Menurut dokumentasi MDN Web Docs, <i>selector</i> digunakan untuk “menargetkan elemen HTML berdasarkan tipe, class, id, atribut, atau hubungan antar elemen”.
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>p {
+    color: red;
+}</code>
+</pre>
+                <p>
+                    Jenis selector dasar yang pemula WAJIB tau:
+                </p>
+
                 <ul class="list-disc pl-8 space-y-2">
-                    <li>Tampilan website lebih rapi dan konsisten</li>
-                    <li>Mudah membuat layout responsif</li>
-                    <li>Memisahkan struktur dan desain</li>
-                    <li>Mempercepat proses pengembangan</li>
+                    <li>
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">p</code>
+                        → semua tag →
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">&lt;p&gt;</code>
+                    </li>
+                    <li>
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">.box</code>
+                        elemen dengan
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">class="box"</code>
+                    </li>
+                    <li>
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">#header</code>
+                        elemen dengan
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">id="header"</code>
+                    </li>
                 </ul>
+
+                <p class="font-semibold">
+                    Catatan penting:
+                </p>
+
+                <ul class="list-disc pl-8 space-y-2">
+                    <li>
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">class</code>
+                        bisa dipakai banyak elemen
+                    </li>
+                    <li>
+                        <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">id</code>
+                        harus unik (satu halaman satu)
+                    </li>
+                </ul>
+
+                <p class="text-justify">
+                    Selector paling dasar yang wajib dipahami oleh pemula antara lain selector tag, selector class, dan selector id. Selector tag digunakan untuk memilih semua elemen dengan nama tag tertentu. Selector class digunakan untuk memilih elemen berdasarkan atribut class dan bersifat reusable. Sementara itu, selector id digunakan untuk memilih satu elemen unik dalam satu halaman.
+                </p>
+                <p class="text-justify">
+                    Pemahaman selector sangat krusial karena kesalahan dalam memilih selector sering kali membuat CSS tidak bekerja sebagaimana mestinya, meskipun penulisannya sudah benar.
+                </p>
             </section>
 
-            <p class="text-justify indent-8">
-                Kunci belajar CSS itu satu: sering praktek.
-                Jangan takut layout berantakan — itu tanda lu lagi naik level 😄
-            </p>
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Property dan Value
+                </h3>
 
+                <p class="text-justify">
+                    Setelah elemen target ditentukan oleh selector, CSS menggunakan property dan value untuk menentukan gaya yang akan diterapkan. Property menunjukkan aspek apa yang ingin diubah, sedangkan value menunjukkan nilai dari perubahan tersebut.
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>p {
+    color: blue;
+    font-size: 16px;
+}</code>
+</pre>
+                <p>
+                    Artinya :
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">color</code> → warna teks</li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">font-size</code> → ukuran teks</li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">blue</code> & <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">16px</code> → warna dan ukuran teks (value)</li>
+                </ul>
+
+                <p>
+                    Properti dasar yang wajib lu kenal di awal:
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">color</code></li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">font-size</code></li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">background-color</code></li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">width</code></li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">height</code></li>
+                </ul>
+
+                <p class="text-justify">
+                    Sebagai contoh, property
+                    <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">
+                        color
+                    </code>
+                    digunakan untuk mengatur warna teks, sementara value-nya bisa berupa nama warna, kode hexadecimal, atau format warna lainnya. Hubungan antara property dan value ini menjadi inti dari cara kerja CSS dalam mengatur tampilan elemen.
+                </p>
+                <p class="text-justify">
+                    Pemahaman selector sangat krusial karena kesalahan dalam memilih selector sering kali membuat CSS tidak bekerja sebagaimana mestinya, meskipun penulisannya sudah benar.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Class dan ID dalam CSS
+                </h3>
+
+                <p class="text-justify">
+                    Dalam HTML dan CSS, class dan id digunakan sebagai penanda elemen agar bisa dipilih secara spesifik. Menurut spesifikasi HTML dan CSS, class bersifat tidak unik dan dapat digunakan oleh banyak elemen, sedangkan id bersifat unik dan hanya boleh digunakan satu kali dalam satu halaman.
+                </p>
+                <h4 class="font-semibold">Class</h4>
+                <p>
+                    Dipakai buat:
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li>Memilih elemen yang memiliki class tertentu</li>
+                    <li>Menerapkan styling yang sama ke beberapa elemen</li>
+                </ul>
+                <p>
+                    HTML :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>&lt;div class="card"&gt;&lt;/div&gt;</code>
+</pre>
+                <p>
+                    CSS :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>.card {
+    background-color: white;
+}</code>
+</pre>
+                <h4 class="font-semibold">ID</h4>
+                <p>
+                    Dipakai buat:
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li>Memilih elemen spesifik yang unik di halaman</li>
+                    <li>Menerapkan styling khusus ke satu elemen saja</li>
+                </ul>
+                <p>
+                    HTML :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>&lt;div id="navbar"&gt;&lt;/div&gt;</code>
+</pre>
+                <p>
+                    CSS :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>#navbar {
+    height: 60px;
+}</code>
+</pre>
+                <p class="text-justify">
+                    Class umumnya digunakan untuk kebutuhan styling yang berulang, seperti kartu, tombol, atau komponen tertentu. Sementara itu, id lebih sering digunakan untuk elemen yang bersifat spesifik, seperti header utama atau container utama halaman.
+                </p>
+                <p class="text-justify">
+                    Pemahaman perbedaan class dan id penting untuk menjaga struktur CSS tetap rapi dan mudah dikembangkan.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Warna dalam CSS
+                </h3>
+
+                <p class="text-justify">
+                    CSS menyediakan beberapa cara untuk mendefinisikan warna. Warna dapat ditulis menggunakan nama warna, format hexadecimal, maupun format RGB. Menurut MDN, penggunaan format warna seperti hexadecimal dan RGB memberikan fleksibilitas lebih tinggi dalam desain antarmuka.
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li>
+                        Nama warna → <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">red</code>, <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">blue</code>
+                    </li>
+                    <li>
+                        Hex → <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">#FF0000</code>, <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">#0000FF</code>
+                    </li>
+                    <li>
+                        RGB → <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">rgb(255, 0, 0)</code>, <code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">rgb(0, 0, 255)</code>
+                    </li>
+                </ul>
+                <p>
+                    Contoh :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>color: red;
+background-color</code>
+</pre>
+                <p class="text-justify">
+                    Dalam praktik modern, banyak developer menggunakan warna dengan nilai yang mendekati abu-abu gelap untuk teks dan warna terang untuk latar belakang, karena lebih nyaman dibaca dan terlihat lebih profesional.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Satuan Ukuran dalam CSS
+                </h3>
+
+                <p class="text-justify">
+                    CSS menggunakan berbagai satuan ukuran untuk menentukan dimensi elemen. Satuan seperti pixel (px) bersifat absolut, sedangkan persentase, viewport height (vh), dan viewport width (vw) bersifat relatif. Menurut W3C, penggunaan satuan relatif sering kali lebih disarankan dalam desain responsif karena memungkinkan elemen menyesuaikan diri dengan ukuran layar yang berbeda.
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">px</code> → pixel (paling aman buat pemula)</li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">%</code> → persentase</li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">vh</code> → viewport height</li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">vw</code> → viewport width</li>
+                </ul>
+                <p>
+                    Contoh :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>width: 100px;
+height: 50px;</code>
+</pre>
+                <p class="text-justify">
+                    Bagi pemula, penggunaan pixel sering disarankan karena lebih mudah dipahami dan memberikan hasil yang konsisten. Setelah konsep dasar dikuasai, barulah satuan relatif digunakan untuk membuat tampilan yang responsif terhadap berbagai ukuran layar.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Margin dan Padding
+                </h3>
+
+                <p class="text-justify">
+                    Margin dan padding merupakan konsep dasar dalam CSS yang berkaitan dengan jarak. Padding adalah jarak antara konten dengan batas elemen, sedangkan margin adalah jarak antara satu elemen dengan elemen lainnya.
+                </p>
+                <ul class="list-disc pl-8 space-y-2">
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">margin</code> → jarak antara elemen dengan elemen lainnya</li>
+                    <li><code class="inline-flex items-center bg-gray-200 px-1 rounded text-sm">padding</code> → jarak antara konten dengan batas elemen</li>
+                </ul>
+                <p>
+                    Contoh :
+                </p>
+                <pre class="!bg-gray-900 !text-green-400 p-4 rounded overflow-x-auto">
+<code>.box {
+    padding: 16px;
+    margin: 20px;
+}</code>
+</pre>
+                <p class="text-justify">
+                    Menurut konsep box model CSS, pengaturan margin dan padding sangat memengaruhi tata letak halaman. Kesalahan dalam memahami dua properti ini sering kali menyebabkan layout terlihat tidak rapi atau tidak sesuai harapan.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Box Model dalam CSS
+                </h3>
+
+                <p class="text-justify">
+                   Box model adalah konsep fundamental yang menjelaskan bahwa setiap elemen HTML direpresentasikan sebagai sebuah kotak. Kotak ini terdiri dari content, padding, border, dan margin. Konsep ini dijelaskan secara resmi dalam spesifikasi CSS oleh W3C.
+                </p>
+                <p class="text-justify">
+                    Memahami box model membantu developer memahami mengapa ukuran elemen bisa berubah meskipun nilai width dan height sudah ditentukan. Oleh karena itu, box model menjadi dasar penting sebelum mempelajari layouting lanjutan.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Penutup
+                </h3>
+
+                <p class="text-justify">
+                   Fundamental CSS mungkin terlihat sederhana dan kurang “wah”, tetapi justru di sinilah letak kekuatan utama seorang frontend developer. Dengan memahami konsep dasar seperti selector, property, box model, dan satuan ukuran, proses belajar layouting akan terasa jauh lebih masuk akal.
+                </p>
+                <p class="text-justify">
+                    CSS bukan tentang menghafal, melainkan tentang memahami cara browser menerjemahkan aturan visual. Kalau fondasinya kuat, level lanjutan tinggal soal latihan dan jam terbang.
+                </p>
+            </section>
+
+            <p class="text-justify">
+                Kunci belajar CSS itu satu: sering praktek.
+                Jangan takut layout berantakan — itu tanda lu lagi naik level
+            </p>
         </article>
 
+        <section class="space-y-4">
+                <h3 class="text-xl font-semibold text-gray-800">
+                    Sumber Rujukan
+                </h3>
+
+                <p class="text-justify">
+                   World Wide Web Consortium (W3C). (2023). <i>Cascading Style Sheets (CSS) — Specifications</i>. W3C. <br> Dokumentasi resmi yang menjelaskan CSS sebagai bahasa stylesheet standar untuk mengatur tampilan dokumen web, termasuk konsep dasar seperti box model, selector, dan properti CSS.
+                </p>
+                <p class="text-justify">
+                    Mozilla Developer Network (MDN). (2024). <i>CSS: Cascading Style Sheets</i>. Mozilla. <br>Sumber dokumentasi populer yang menjelaskan konsep dan penggunaan CSS secara komprehensif, mulai dari dasar hingga lanjutan, dengan pendekatan yang mudah dipahami oleh pemula maupun developer berpengalaman.
+                </p>
+                <p class="text-justify">
+                    Mozilla Developer Network (MDN). (2024). <i>CSS Selectors</i>. Mozilla. <br>Referensi yang membahas berbagai jenis selector dalam CSS serta cara penggunaannya untuk menargetkan elemen HTML secara spesifik.
+                </p>
+                <p class="text-justify">
+                    Mozilla Developer Network (MDN). (2024). <i>The CSS Box Model</i>. Mozilla. <br>Dokumentasi yang menjelaskan konsep box model dalam CSS, termasuk hubungan antara content, padding, border, dan margin dalam pengaturan layout halaman web.
+                </p>
+                <p class="text-justify">
+                    Mozilla Developer Network (MDN). (2024). <i>CSS Values and Units</i>. Mozilla. <br>Sumber rujukan mengenai berbagai satuan ukuran dan nilai dalam CSS, seperti pixel, persentase, serta satuan relatif lainnya yang digunakan dalam desain web.
+                </p>
+        </section>
 
         <!-- AUTHOR -->
         <hr class="my-12 border-gray-200">

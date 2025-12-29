@@ -130,13 +130,6 @@
                         </ul>
                     </div>
 
-
-                    <!-- Recent Posts -->
-                    <div id="recentPosts" class="bg-white rounded-xl shadow-sm p-5">
-                        <h4 class="font-semibold mb-4 text-gray-800">Artikel Terbaru</h4>
-                        <div class="space-y-4" id="recentList"></div>
-                    </div>
-
                 </div>
             </aside>
 
@@ -159,50 +152,6 @@
     </footer>
 
     <script src="js/blog.js"></script>
-    <script>
-
-        const articles = [
-        { title: "Belajar Tailwind CSS dari Nol", link: "artikel/belajar-tailwind.html" },
-        { title: "JavaScript Dasar yang Wajib Dipahami", link: "artikel/js-dasar.html" },
-        { title: "Tips Bikin Portfolio Web", link: "artikel/portfolio.html" },
-        { title: "Framework CSS Terbaik 2025", link: "artikel/framework-css.html" },
-        ];
-
-        const recentList = document.getElementById("recentList");
-
-        // Ambil 3 artikel terakhir
-        const latest = articles.slice(-3);
-
-        latest.forEach(item => {
-        const a = document.createElement("a");
-        a.href = item.link;
-        a.className = "block text-sm text-gray-700 hover:text-blue-600";
-        a.textContent = item.title;
-        recentList.appendChild(a);
-        });
-
-        const btn = document.getElementById("menuBtn");
-        const menu = document.getElementById("mobileMenu");
-        const lines = btn.querySelectorAll("span");
-        const nav = document.getElementById("navbar");
-
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("max-h-0");
-            menu.classList.toggle("max-h-screen");
-
-            lines[0].classList.toggle("rotate-45");
-            lines[0].classList.toggle("translate-y-1.5");
-
-            lines[1].classList.toggle("opacity-0");
-
-            lines[2].classList.toggle("-rotate-45");
-            lines[2].classList.toggle("-translate-y-1.5");
-        });
-
-        window.addEventListener("scroll", () => {
-            nav.classList.toggle("shadow-md", window.scrollY > 10);
-        });
-    </script>
     
 </body>
 </html>

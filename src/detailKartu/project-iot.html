@@ -42,9 +42,7 @@
 
   <!-- HEADER -->
   <header class="relative bg-cover bg-center py-16" style="background-image: url('../../image/IoT.jpg');">
-    <!-- Overlay Gelap -->
     <div class="absolute inset-0 bg-black/50"></div>
-
     <div class="relative max-w-6xl mx-auto px-4 text-center">
       <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">ini adalah contoh isi kategori</h1>
       <p class="text-lg text-blue-100">Klik gambar untuk lihat preview full.</p>
@@ -85,7 +83,8 @@
         keywords: "IoT, DHT11, ESP8266, Realtime",
         image: "../../image/ilustrasi.jpg",
         caption: "Tampilan data suhu dan kelembapan pada dashboard",
-        link: "../artikel/iot-monitoring.html"
+        link: "../artikel/iot-monitoring.html",
+        publishDate: "2025-12-22"
       },
       {
         title: "Pendeteksi Kebocoran Gas",
@@ -93,7 +92,8 @@
         keywords: "IoT, MQ-2, Gas Sensor, Safety",
         image: "../../image/ilustrasi.jpg",
         caption: "Prototipe alat pendeteksi kebocoran gas",
-        link: "../artikel/iot-gas.html"
+        link: "../artikel/iot-gas.html",
+        publishDate: "2025-12-22"
       },
       {
         title: "Smart Lamp Berbasis Internet",
@@ -101,7 +101,8 @@
         keywords: "IoT, ESP32, Relay, Web Control",
         image: "../../image/ilustrasi.jpg",
         caption: "Kontrol lampu melalui dashboard web",
-        link: "../artikel/iot-lamp.html"
+        link: "../artikel/iot-lamp.html",
+        publishDate: "2025-12-29"
       },
       {
         title: "Sistem Monitoring Ketinggian Air",
@@ -109,57 +110,77 @@
         keywords: "IoT, Ultrasonic, Water Level, Monitoring",
         image: "../../image/ilustrasi.jpg",
         caption: "Pembacaan ketinggian air secara realtime",
-        link: "../artikel/iot-water.html"
+        link: "../artikel/iot-water.html",
+        publishDate: "2025-10-22"
       }
     ];
 
     const container = document.getElementById("projectContainer");
 
-    projects.forEach(item => {
-      container.innerHTML += `
-        <section class="text-justify grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+    // === WAKTU RELATIF ALA YOUTUBE ===
+    function timeAgo(dateString) {
+      const now = new Date();
+      const past = new Date(dateString);
+      const diff = Math.floor((now - past) / 1000);
 
-          <!-- GALLERY -->
-          <div class="space-y-6">
-            <figure class="space-y-2">
-              <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
-                <img
-                  class="previewImg cursor-pointer w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-110 blur-sm scale-105 transition duration-500"
-                  src="${item.image}"
-                  alt="${item.title}"
-                  loading="lazy"
-                  onload="this.classList.remove('blur-sm')"
-                />
+      if (diff < 60) return "baru saja";
+      if (diff < 3600) return `${Math.floor(diff / 60)} menit yang lalu`;
+      if (diff < 86400) return `${Math.floor(diff / 3600)} jam yang lalu`;
+      if (diff < 604800) return `${Math.floor(diff / 86400)} hari yang lalu`;
+      if (diff < 2592000) return `${Math.floor(diff / 604800)} minggu yang lalu`;
+      if (diff < 31536000) return `${Math.floor(diff / 2592000)} bulan yang lalu`;
+      return `${Math.floor(diff / 31536000)} tahun yang lalu`;
+    }
+
+    function renderProjects() {
+      // SORT TERBARU DULU
+      projects
+        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+        .forEach(item => {
+          container.innerHTML += `
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+              
+              <div class="space-y-3">
+                <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src="${item.image}"
+                    class="previewImg w-full h-full object-cover cursor-pointer hover:scale-110 transition"
+                  />
+                </div>
+                <p class="text-sm text-gray-500 text-center">
+                  ${item.caption}
+                </p>
               </div>
-              <figcaption class="text-sm text-gray-500 text-center">
-                ${item.caption}
-              </figcaption>
-            </figure>
-          </div>
 
-          <!-- DESCRIPTION -->
-          <div class="flex flex-col justify-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">
-              ${item.title}
-            </h2>
+              <div>
+                <p class="text-xs text-gray-400 mb-1">
+                  ${timeAgo(item.publishDate)}
+                </p>
 
-            <p class="text-gray-700 mb-4">
-              ${item.desc}
-            </p>
+                <h2 class="text-2xl font-bold mb-3">
+                  ${item.title}
+                </h2>
 
-            <p class="text-gray-600 mb-6 text-sm">
-              kata kunci : ${item.keywords}
-            </p>
+                <p class="text-gray-700 mb-4">
+                  ${item.desc}
+                </p>
 
-            <a href="${item.link}"
-              class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
-              Lihat Detail
-            </a>
-          </div>
+                <p class="text-sm text-gray-500 mb-6">
+                  kata kunci: ${item.keywords}
+                </p>
 
-        </section>
-      `;
-    });
+                <a href="${item.link}"
+                  class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+                  Lihat Detail
+                </a>
+              </div>
+
+            </section>
+          `;
+        });
+    }
+
+    renderProjects();
 
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("mobileMenu");

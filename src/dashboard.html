@@ -112,59 +112,114 @@
 
     // Sample Dashboard Cards
     const categories = [
-      { title: "Wisata & Kuliner", 
-        desc: "Review tempat wisata dan kuliner.", 
-        image: "../image/wisataKuliner.jpg", 
-        link: "detailKartu/wisata-kuliner.html" },
-
-      { title: "Project IoT", 
-        desc: "Project IoT terbaru.", 
-        image: "../image/IoT.jpg", 
-        link: "detailKartu/project-iot.html" },
-
-      { title: "Computer Vision", 
-        desc: "Project Computer Vision.", 
-        image: "../image/CompVision.jpeg", 
-        link: "detailKartu/project-comp-vis.html" },
-    ];
+    { 
+      title: "Wisata & Kuliner", 
+      desc: "Review tempat wisata dan kuliner.", 
+      image: "../image/wisataKuliner.jpg", 
+      link: "detailKartu/wisata-kuliner.html",
+      date: "2025-12-24"
+    },
+    { 
+      title: "Project IoT", 
+      desc: "Project IoT terbaru.", 
+      image: "../image/IoT.jpg", 
+      link: "detailKartu/project-iot.html",
+      date: "2025-12-22"
+    },
+    { 
+      title: "Computer Vision", 
+      desc: "Project Computer Vision.", 
+      image: "../image/CompVision.jpeg", 
+      link: "detailKartu/project-comp-vis.html",
+      date: "2025-12-21"
+    },
+  ];
 
     const container = document.getElementById("cardContainer");
+
     categories.forEach(item => {
       container.innerHTML += `
         <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group flex flex-col h-full">
+          
           <div class="overflow-hidden">
-            <img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover blur-sm group-hover:scale-105 transition duration-500" loading="lazy" onload="this.classList.remove('blur-sm')">
+            <img 
+              src="${item.image}" 
+              alt="${item.title}" 
+              class="w-full h-48 object-cover blur-sm group-hover:scale-105 transition duration-500" 
+              loading="lazy"
+              onload="this.classList.remove('blur-sm')"
+            >
           </div>
+
           <div class="p-6 flex flex-col flex-1">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">${item.title}</h3>
-            <p class="text-sm text-gray-600 mb-6">${item.desc}</p>
-            <a href="${item.link}" class="mt-auto inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:gap-2 transition-all">Lihat Detail →</a>
+            <span class="text-xs text-gray-400 mb-1">
+              ${timeAgo(item.date)}
+            </span>
+
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              ${item.title}
+            </h3>
+
+            <p class="text-sm text-gray-600 mb-6">
+              ${item.desc}
+            </p>
+
+            <a href="${item.link}" 
+              class="mt-auto inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:gap-2 transition-all">
+              Lihat Detail →
+            </a>
           </div>
         </article>
       `;
     });
 
+    function timeAgo(dateStr) {
+      const now = new Date();
+      const past = new Date(dateStr);
+      const diff = Math.floor((now - past) / 1000); // detik
+
+      if (diff < 60) return `${diff} detik lalu`;
+
+      const minutes = Math.floor(diff / 60);
+      if (minutes < 60) return `${minutes} menit lalu`;
+
+      const hours = Math.floor(minutes / 60);
+      if (hours < 24) return `${hours} jam lalu`;
+
+      const days = Math.floor(hours / 24);
+      if (days < 7) return `${days} hari lalu`;
+
+      const weeks = Math.floor(days / 7);
+      if (weeks < 4) return `${weeks} minggu lalu`;
+
+      const months = Math.floor(days / 30);
+      if (months < 12) return `${months} bulan lalu`;
+
+      const years = Math.floor(days / 365);
+      return `${years} tahun lalu`;
+    }
+
     // Sidebar New Content
     const newContents = [
+      { type: "Wisata & Kuliner", 
+        title: "Pantai Sawangan", 
+        link: "artikel/pantai-sawangan.html" 
+      },
+      { type: "Wisata & Kuliner", 
+        title: "D'Las Lembah Asri Serang Purbalingga", 
+        link: "artikel/dlas.html"
+      },
+      { type: "Wisata & Kuliner", 
+        title: "Dataran Tinggi Dieng", 
+        link: "artikel/dieng.html" 
+      },
+      { type: "Wisata & Kuliner", 
+        title: "Bakso Mercon 03 - Cabang Taman Reptil Purbalingga", 
+        link: "artikel/bakso-mercon.html" 
+      },
       { type: "Blog", 
-        title: "Belajar Tailwind CSS", 
+        title: "Belajar CSS dari Nol", 
         link: "blog/artikel/belajar-tailwind.html" 
-      },
-      { type: "Dashboard", 
-        title: "Wisata & Kuliner", 
-        link: "detailKartu/wisata-kuliner.html" 
-      },
-      { type: "Blog", 
-        title: "JavaScript Dasar", 
-        link: "blog/artikel/js-dasar.html" 
-      },
-      { type: "Dashboard", 
-        title: "Project IoT", 
-        link: "detailKartu/project-iot.html" 
-      },
-      { type: "Blog", 
-        title: "Tips Portfolio Web", 
-        link: "blog/artikel/portfolio.html" 
       },
     ];
 
@@ -176,7 +231,7 @@
       notifList.innerHTML = "";
 
       // Ambil max notifikasi terbaru
-      const latest = contents.slice(-max);
+      const latest = contents.slice(-max).reverse();
 
       latest.forEach(item => {
         const li = document.createElement("li");
@@ -202,13 +257,6 @@
       renderNotifications(newContents); // Auto update & hide lama
     }
 
-    // Tambah notifikasi baru
-    addNotification({
-      type: "Dashboard",
-      title: "Project Computer Vision",
-      link: "detailKartu/project-comp-vis.html"
-    });
-
-    </script>
+  </script>
 </body>
 </html>

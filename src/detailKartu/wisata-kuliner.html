@@ -42,21 +42,20 @@
 
   <!-- HEADER -->
   <header class="relative bg-cover bg-center py-16" style="background-image: url('../../image/wisataKuliner.jpg');">
-    <!-- Overlay Gelap -->
     <div class="absolute inset-0 bg-black/50"></div>
-
     <div class="relative max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">Detail Wisata, Kuliner & Jajan</h1>
-      <p class="text-lg text-blue-100">Klik gambar untuk lihat preview full.</p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        Detail Wisata, Kuliner & Jajan
+      </h1>
+      <p class="text-lg text-blue-100">
+        Update terbaru ada di paling atas ya!
+      </p>
     </div>
   </header>
 
-  <main
-    id="projectContainer"
-    class="max-w-6xl mx-auto px-4 py-12 space-y-16"
-  ></main>
+  <main id="projectContainer" class="max-w-6xl mx-auto px-4 py-12 space-y-16"></main>
 
-  <!-- MODAL PREVIEW -->
+  <!-- MODAL -->
   <div id="imageModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
     <div class="relative max-w-4xl w-full px-4">
       <button id="closeModal" class="absolute -top-10 right-0 text-white text-3xl">&times;</button>
@@ -64,95 +63,90 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t mt-10">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-gray-500 text-sm">&copy; 2025 BagusDev</p>
-      <div class="flex gap-4 text-gray-500">
-        <a href="#" class="hover:text-blue-600">Privacy</a>
-        <a href="#" class="hover:text-blue-600">Terms</a>
-        <a href="#" class="hover:text-blue-600">Contact</a>
-      </div>
-    </div>
-  </footer>
-
   <!-- SCRIPT -->
   <script>
-        const kulinerList = [
-          {
-            title: "Bakso Mercon 03 - Cabang Taman Reptil Purbalingga",
-            desc: "Bakso Mercon 03 adalah salah satu tempat kuliner populer di Purbalingga, terkenal dengan bakso pedasnya yang menggugah selera.",
-            keywords: "bakso, kuliner, pedas, Purbalingga",
-            image: "../../image/bakso.jpeg",
-            caption: "Bakso Mercon 03 - Salah satu kuliner favorit",
-            link: "../artikel/bakso-mercon.html",
-            publishDate: "2025-12-22"
-          },
-          {
-            title: "Dataran Tinggi Dieng",
-            desc: "Dieng adalah destinasi wisata alam yang menakjubkan dengan pemandangan pegunungan, kawah, dan budaya lokal yang kaya.",
-            keywords: "wisata, alam, pegunungan, Dieng",
-            image: "../../image/dieng.jpg",
-            caption: "Pemandangan indah Dataran Tinggi Dieng",
-            link: "../artikel/dieng.html",
-            publishDate: "2025-12-23"
-          },
-          {
-            title: "D'Las Lembah Asri Serang Purbalingga",
-            desc: "D’Las Lembah Asri merupakan tempat wisata alam dengan suasana hijau yang asri dan udara sejuk, cocok untuk bersantai dan melepas penat.",
-            keywords: "wisata, alam, asri, Purbalingga",
-            image: "../../image/dlas.JPG",
-            caption: "Memetik strawberry di D'Las Lembah Asri",
-            link: "../artikel/dlas.html",
-            publishDate: "2025-12-23"
-          },
-          {
-            title: "Pantai Sawangan Kebumen",
-            desc: "Pantai Sawangan adalah pantai yang indah di Kebumen, terkenal dengan pasir putihnya dan pemandangan matahari terbenam yang memukau.",
-            keywords: "wisata, pantai, rekreasi, Kebumen",
-            image: "../../image/sawangan.jpg",
-            caption: "Pemandangan Pantai Sawangan yang menawan",
-            link: "../artikel/pantai-sawangan.html",
-            publishDate: "2025-12-24"
-          }
-        ];
+    const kulinerList = [
+      {
+        title: "Bakso Mercon 03 - Cabang Taman Reptil Purbalingga",
+        desc: "Bakso Mercon 03 adalah salah satu tempat kuliner populer di Purbalingga.",
+        keywords: "bakso, kuliner, pedas, Purbalingga",
+        image: "../../image/bakso.jpeg",
+        caption: "Bakso Mercon 03 - Salah satu kuliner favorit",
+        link: "../artikel/bakso-mercon.html",
+        publishDate: "2025-12-22"
+      },
+      {
+        title: "Dataran Tinggi Dieng",
+        desc: "Dieng adalah destinasi wisata alam dengan panorama pegunungan.",
+        keywords: "wisata, alam, Dieng",
+        image: "../../image/dieng.jpg",
+        caption: "Pemandangan Dataran Tinggi Dieng",
+        link: "../artikel/dieng.html",
+        publishDate: "2025-12-23"
+      },
+      {
+        title: "D'Las Lembah Asri Serang Purbalingga",
+        desc: "Wisata alam hijau dan sejuk, cocok buat healing tipis-tipis.",
+        keywords: "wisata, alam, Purbalingga",
+        image: "../../image/dlas.JPG",
+        caption: "Memetik strawberry di D'Las",
+        link: "../artikel/dlas.html",
+        publishDate: "2025-12-23"
+      },
+      {
+        title: "Pantai Sawangan Kebumen",
+        desc: "Pantai pasir putih dengan sunset cakep.",
+        keywords: "wisata, pantai, Kebumen",
+        image: "../../image/sawangan.jpg",
+        caption: "Pantai Sawangan",
+        link: "../artikel/pantai-sawangan.html",
+        publishDate: "2025-12-24"
+      }
+    ];
 
-      const container = document.getElementById("projectContainer");
+    const container = document.getElementById("projectContainer");
 
-      function renderKuliner() {
-        const now = new Date();
-        
-        kulinerList.forEach(item => {
-          const publish = new Date(item.publishDate);
-          const diffDays = Math.floor((now - publish) / (1000 * 60 * 60 * 24));
-          const isNew = diffDays <= 3; // badge NEW muncul kalau publish <= 7 hari yang lalu
+    // === WAKTU RELATIF ALA YOUTUBE ===
+    function timeAgo(dateString) {
+      const now = new Date();
+      const past = new Date(dateString);
+      const diff = Math.floor((now - past) / 1000);
 
+      if (diff < 60) return "baru saja";
+      if (diff < 3600) return `${Math.floor(diff / 60)} menit yang lalu`;
+      if (diff < 86400) return `${Math.floor(diff / 3600)} jam yang lalu`;
+      if (diff < 604800) return `${Math.floor(diff / 86400)} hari yang lalu`;
+      if (diff < 2592000) return `${Math.floor(diff / 604800)} minggu yang lalu`;
+      if (diff < 31536000) return `${Math.floor(diff / 2592000)} bulan yang lalu`;
+      return `${Math.floor(diff / 31536000)} tahun yang lalu`;
+    }
+
+    function renderKuliner() {
+      // SORT TERBARU DULU
+      kulinerList
+        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+        .forEach(item => {
           container.innerHTML += `
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10 relative">
-
-              <!-- GALLERY -->
-              <div class="space-y-6 relative">
-                ${isNew ? `<span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full z-10">NEW</span>` : ''}
-
-                <figure class="space-y-2">
-                  <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg relative">
-                    <img
-                      class="previewImg cursor-pointer w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-110 blur-sm scale-105 transition duration-500"
-                      src="${item.image}"
-                      alt="${item.title}"
-                      loading="lazy"
-                      onload="this.classList.remove('blur-sm')"
-                    />
-                  </div>
-                  <figcaption class="text-sm text-gray-500 text-center">
-                    ${item.caption}
-                  </figcaption>
-                </figure>
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+              
+              <div class="space-y-3">
+                <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src="${item.image}"
+                    class="previewImg w-full h-full object-cover cursor-pointer hover:scale-110 transition"
+                  />
+                </div>
+                <p class="text-sm text-gray-500 text-center">
+                  ${item.caption}
+                </p>
               </div>
 
-              <!-- DESCRIPTION -->
-              <div class="flex flex-col justify-center">
-                <h2 class="text-2xl font-bold text-gray-800 mb-3">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">
+                  ${timeAgo(item.publishDate)}
+                </p>
+
+                <h2 class="text-2xl font-bold mb-3">
                   ${item.title}
                 </h2>
 
@@ -160,12 +154,12 @@
                   ${item.desc}
                 </p>
 
-                <p class="text-gray-600 mb-6 text-sm">
-                  kata kunci : ${item.keywords}
+                <p class="text-sm text-gray-500 mb-6">
+                  kata kunci: ${item.keywords}
                 </p>
 
                 <a href="${item.link}"
-                  class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+                  class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
                   Lihat Detail
                 </a>
               </div>
@@ -173,59 +167,26 @@
             </section>
           `;
         });
-      }
+    }
+
     renderKuliner();
 
-        const btn = document.getElementById("menuBtn");
-        const menu = document.getElementById("mobileMenu");
-        const lines = btn.querySelectorAll("span");
-        const nav = document.getElementById("navbar");
+    // IMAGE PREVIEW
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
 
-        btn.addEventListener("click", () => {
-          menu.classList.toggle("max-h-0");
-          menu.classList.toggle("max-h-screen");
-
-          lines[0].classList.toggle("rotate-45");
-          lines[0].classList.toggle("translate-y-1.5");
-          lines[1].classList.toggle("opacity-0");
-          lines[2].classList.toggle("-rotate-45");
-          lines[2].classList.toggle("-translate-y-1.5");
-        });
-
-        window.addEventListener("scroll", () => {
-          nav.classList.toggle("shadow", window.scrollY > 10);
-        });
-
-        // IMAGE PREVIEW
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImg");
-        const closeModal = document.getElementById("closeModal");
-
-        function initImagePreview() {
-          const previewImages = document.querySelectorAll(".previewImg");
-
-          previewImages.forEach(img => {
-            img.addEventListener("click", () => {
-              modal.classList.remove("hidden");
-              modal.classList.add("flex");
-              modalImg.src = img.src;
-            });
-          });
-        }
-
-        initImagePreview();
-
-        closeModal.addEventListener("click", () => {
-          modal.classList.add("hidden");
-          modal.classList.remove("flex");
-        });
-
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
-          }
-        });
+    document.addEventListener("click", e => {
+      if (e.target.classList.contains("previewImg")) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modalImg.src = e.target.src;
+      }
+      if (e.target.id === "imageModal") {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
   </script>
+
 </body>
 </html>

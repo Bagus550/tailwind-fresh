@@ -85,7 +85,8 @@
         keywords: "YOLO, OpenCV, Python",
         image: "../../image/ilustrasi.jpg",
         caption: "Contoh hasil deteksi objek",
-        link: "../artikel/deteksi-objek.html"
+        link: "../artikel/deteksi-objek.html",
+        publishDate: "2025-11-15"
       },
       {
         title: "Face Recognition",
@@ -93,57 +94,77 @@
         keywords: "FaceNet, CNN, AI",
         image: "../../image/ilustrasi.jpg",
         caption: "Hasil pengenalan wajah",
-        link: "../artikel/face-recognition.html"
+        link: "../artikel/face-recognition.html",
+        publishDate: "2025-12-05"
       }
     ];
 
     const container = document.getElementById("projectContainer");
 
-    projects.forEach(item => {
-      container.innerHTML += `
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+    // === WAKTU RELATIF ALA YOUTUBE ===
+    function timeAgo(dateString) {
+      const now = new Date();
+      const past = new Date(dateString);
+      const diff = Math.floor((now - past) / 1000);
 
-          <!-- GALLERY -->
-          <div class="space-y-6">
-            <figure class="space-y-2">
-              <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
-                <img
-                  class="previewImg cursor-pointer w-full h-full object-cover object-center transform transition-transform duration-300 hover:scale-110 blur-sm scale-105 transition duration-500"
-                  src="${item.image}"
-                  alt="${item.title}"
-                  loading="lazy"
-                  onload="this.classList.remove('blur-sm')"
-                />
+      if (diff < 60) return "baru saja";
+      if (diff < 3600) return `${Math.floor(diff / 60)} menit yang lalu`;
+      if (diff < 86400) return `${Math.floor(diff / 3600)} jam yang lalu`;
+      if (diff < 604800) return `${Math.floor(diff / 86400)} hari yang lalu`;
+      if (diff < 2592000) return `${Math.floor(diff / 604800)} minggu yang lalu`;
+      if (diff < 31536000) return `${Math.floor(diff / 2592000)} bulan yang lalu`;
+      return `${Math.floor(diff / 31536000)} tahun yang lalu`;
+    }
+
+    function renderProjects() {
+      // SORT TERBARU DULU
+      projects
+        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+        .forEach(item => {
+          container.innerHTML += `
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center border-b pb-10">
+              
+              <div class="space-y-3">
+                <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src="${item.image}"
+                    class="previewImg w-full h-full object-cover cursor-pointer hover:scale-110 transition"
+                  />
+                </div>
+                <p class="text-sm text-gray-500 text-center">
+                  ${item.caption}
+                </p>
               </div>
-              <figcaption class="text-sm text-gray-500 text-center">
-                ${item.caption}
-              </figcaption>
-            </figure>
-          </div>
 
-          <!-- DESCRIPTION -->
-          <div class="flex flex-col justify-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">
-              ${item.title}
-            </h2>
+              <div>
+                <p class="text-xs text-gray-400 mb-1">
+                  ${timeAgo(item.publishDate)}
+                </p>
 
-            <p class="text-gray-700 mb-4">
-              ${item.desc}
-            </p>
+                <h2 class="text-2xl font-bold mb-3">
+                  ${item.title}
+                </h2>
 
-            <p class="text-gray-600 mb-6 text-sm">
-              kata kunci : ${item.keywords}
-            </p>
+                <p class="text-gray-700 mb-4">
+                  ${item.desc}
+                </p>
 
-            <a href="${item.link}"
-              class="inline-block w-max bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
-              Lihat Detail
-            </a>
-          </div>
+                <p class="text-sm text-gray-500 mb-6">
+                  kata kunci: ${item.keywords}
+                </p>
 
-        </section>
-      `;
-    });
+                <a href="${item.link}"
+                  class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+                  Lihat Detail
+                </a>
+              </div>
+
+            </section>
+          `;
+        });
+    }
+
+    renderProjects();
 
     const btn = document.getElementById("menuBtn");
     const menu = document.getElementById("mobileMenu");

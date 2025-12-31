@@ -1,213 +1,252 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detail</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail</title>
 
-  <link rel="icon" type="image/png" href="../../image/logo-white.ico">
-  <link rel="stylesheet" href="../../output.css" />
-</head>
+    <link rel="icon" type="image/png" href="../../image/logo-white.ico" />
+    <link rel="stylesheet" href="../../output.css" />
+  </head>
 
-<body class="bg-gray-100">
-
+  <body class="bg-gray-100">
     <!-- NAVBAR -->
-  <nav id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-shadow">
-    <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-      <div class="text-xl font-bold text-blue-600">BagusDev</div>
+    <nav
+      id="navbar"
+      class="bg-white shadow-sm sticky top-0 z-50 transition-shadow"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+      >
+        <div class="text-xl font-bold text-blue-600">BagusDev</div>
 
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1">
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-      </button>
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+        </button>
 
-      <div class="hidden md:flex gap-6 text-gray-600">
-        <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
-        <a href="../blog/blog.html" class="hover:text-blue-600">Blog</a>
-        <a href="../about.html" class="hover:text-blue-600">About</a>
-        <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+        <div class="hidden md:flex gap-6 text-gray-600">
+          <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+          <a href="../blog/blog.html" class="hover:text-blue-600">Blog</a>
+          <a href="../about.html" class="hover:text-blue-600">About</a>
+          <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+        </div>
       </div>
-    </div>
 
-    <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-      <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-        <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
-        <a href="../blog.html" class="hover:text-blue-600">Blog</a>
-        <a href="../about.html" class="hover:text-blue-600">About</a>
-        <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+      <div
+        id="mobileMenu"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+      >
+        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+          <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+          <a href="../blog.html" class="hover:text-blue-600">Blog</a>
+          <a href="../about.html" class="hover:text-blue-600">About</a>
+          <a href="../contact.html" class="hover:text-blue-600">Contact</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- HEADER -->
-  <header class="relative bg-cover bg-center py-24" style="background-image: url('../../image/dlas.JPG');">
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- HEADER -->
+    <header
+      class="relative bg-cover bg-center py-24"
+      style="background-image: url('../../image/dlas.JPG')"
+    >
+      <div class="absolute inset-0 bg-black/60"></div>
 
-    <div class="relative max-w-4xl mx-auto px-4 text-center">
-      <span class="inline-block mb-4 px-4 py-1 text-sm bg-blue-600/90 text-white rounded-full">
-        Wisata Alam Purbalingga
-      </span>
-
-      <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
-        D'Las Lembah Asri Serang Purbalingga
-      </h1>
-
-      <p class="text-blue-100 text-sm md:text-base max-w-2xl mx-auto">
-        D’Las Lembah Asri merupakan tempat wisata alam dengan suasana hijau yang asri dan udara sejuk, cocok untuk bersantai dan melepas penat.
-      </p>
-    </div>
-  </header>
-
-  <!-- CONTENT -->
-  <main class="max-w-4xl mx-auto px-4 py-16 space-y-16">
-
-    <!-- ARTICLE -->
-    <article class="space-y-6 text-gray-700 leading-relaxed">
-
-      <div class="flex items-center gap-3 text-sm text-gray-500 mb-6">
-        <span class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7
-              a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          23 Desember 2025
+      <div class="relative max-w-4xl mx-auto px-4 text-center">
+        <span
+          class="inline-block mb-4 px-4 py-1 text-sm bg-blue-600/90 text-white rounded-full"
+        >
+          Wisata Alam Purbalingga
         </span>
 
-        <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
-
-        <span>BagusDev</span>
-      </div>
-
-      <p>
-        D'Las Lembah Asri adalah sebuah destinasi wisata alam yang terletak di Serang, Purbalingga.
-        Tempat ini menawarkan pemandangan alam yang hijau dan asri, dengan udara yang sejuk dan
-        segar, menjadikannya tempat yang ideal untuk bersantai dan melepas penat dari rutinitas sehari-hari.
-      </p>
-
-      <p>
-        Di D'Las Lembah Asri, pengunjung dapat menikmati berbagai aktivitas outdoor seperti
-        berjalan-jalan di sekitar area yang dipenuhi dengan pepohonan rindang, bersepeda,
-        atau sekadar duduk santai sambil menikmati keindahan alam sekitar.
-        Terdapat juga area piknik yang nyaman untuk keluarga atau kelompok teman.
-      </p>
-
-      <p>
-        Selain itu, D'Las Lembah Asri juga menyediakan fasilitas pendukung seperti
-        warung makan yang menyajikan hidangan lokal, area parkir yang luas,
-        serta toilet umum yang bersih untuk kenyamanan pengunjung.
-        Tempat ini sangat cocok untuk dikunjungi pada akhir pekan atau hari libur.
-      </p>
-
-      <p class="text-sm text-gray-500 pt-4">
-        <strong>Kata kunci:</strong> wisata, alam, asri, Purbalingga
-      </p>
-
-      <p class="text-sm">
-        📍 Lokasi:
-        <a href="https://maps.app.goo.gl/6sr9WWQCyzdyVXAaA"
-          class="text-blue-600 hover:underline">
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4"
+        >
           D'Las Lembah Asri Serang Purbalingga
-        </a>
-      </p>
+        </h1>
 
-    </article>
-
-    <!-- GALLERY -->
-    <section>
-      <h2 class="text-2xl font-bold mb-6 text-gray-800">
-        Galeri
-      </h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-        <figure class="space-y-2 sm:col-span-2">
-          <div class="aspect-[16/9] overflow-hidden rounded-xl shadow">
-            <img
-              class="previewImg cursor-pointer w-full h-full object-cover hover:scale-105 transition"
-              src="../../image/dlas.JPG"
-            >
-          </div>
-          <figcaption class="text-sm text-gray-500 text-center">
-            Memetik strawberry di D'Las Lembah Asri
-          </figcaption>
-        </figure>
-
+        <p class="text-blue-100 text-sm md:text-base max-w-2xl mx-auto">
+          D’Las Lembah Asri merupakan tempat wisata alam dengan suasana hijau
+          yang asri dan udara sejuk, cocok untuk bersantai dan melepas penat.
+        </p>
       </div>
-    </section>
+    </header>
 
-</main>
+    <!-- CONTENT -->
+    <main class="max-w-4xl mx-auto px-4 py-16 space-y-16">
+      <!-- ARTICLE -->
+      <article class="space-y-6 text-gray-700 leading-relaxed">
+        <div class="flex items-center gap-3 text-sm text-gray-500 mb-6">
+          <span class="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7
+              a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            23 Desember 2025
+          </span>
 
+          <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+
+          <span>BagusDev</span>
+        </div>
+
+        <p>
+          D'Las Lembah Asri adalah sebuah destinasi wisata alam yang terletak di
+          Serang, Purbalingga. Tempat ini menawarkan pemandangan alam yang hijau
+          dan asri, dengan udara yang sejuk dan segar, menjadikannya tempat yang
+          ideal untuk bersantai dan melepas penat dari rutinitas sehari-hari.
+        </p>
+
+        <p>
+          Di D'Las Lembah Asri, pengunjung dapat menikmati berbagai aktivitas
+          outdoor seperti berjalan-jalan di sekitar area yang dipenuhi dengan
+          pepohonan rindang, bersepeda, atau sekadar duduk santai sambil
+          menikmati keindahan alam sekitar. Terdapat juga area piknik yang
+          nyaman untuk keluarga atau kelompok teman.
+        </p>
+
+        <p>
+          Selain itu, D'Las Lembah Asri juga menyediakan fasilitas pendukung
+          seperti warung makan yang menyajikan hidangan lokal, area parkir yang
+          luas, serta toilet umum yang bersih untuk kenyamanan pengunjung.
+          Tempat ini sangat cocok untuk dikunjungi pada akhir pekan atau hari
+          libur.
+        </p>
+
+        <p class="text-sm text-gray-500 pt-4">
+          <strong>Kata kunci:</strong> wisata, alam, asri, Purbalingga
+        </p>
+
+        <p class="text-sm">
+          📍 Lokasi:
+          <a
+            href="https://maps.app.goo.gl/6sr9WWQCyzdyVXAaA"
+            class="text-blue-600 hover:underline"
+          >
+            D'Las Lembah Asri Serang Purbalingga
+          </a>
+        </p>
+      </article>
+
+      <!-- GALLERY -->
+      <section>
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Galeri</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <figure class="space-y-2 sm:col-span-2">
+            <div class="aspect-[16/9] overflow-hidden rounded-xl shadow">
+              <img
+                class="previewImg cursor-pointer w-full h-full object-cover hover:scale-105 transition"
+                src="../../image/dlas.JPG"
+              />
+            </div>
+            <figcaption class="text-sm text-gray-500 text-center">
+              Memetik strawberry di D'Las Lembah Asri
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
 
     <!-- MODAL PREVIEW -->
-    <div id="imageModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-        <div class="relative max-w-4xl w-full px-4">
-        <button id="closeModal" class="absolute -top-10 right-0 text-white text-3xl">&times;</button>
-        <img id="modalImg" class="w-full max-h-[90vh] rounded-lg shadow-2xl object-contain bg-white" />
-        </div>
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50"
+    >
+      <div class="relative max-w-4xl w-full px-4">
+        <button
+          id="closeModal"
+          class="absolute -top-10 right-0 text-white text-3xl"
+        >
+          &times;
+        </button>
+        <img
+          id="modalImg"
+          class="w-full max-h-[90vh] rounded-lg shadow-2xl object-contain bg-white"
+        />
+      </div>
     </div>
 
     <!-- FOOTER -->
     <footer class="bg-white border-t mt-10">
-        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div
+        class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
         <p class="text-gray-500 text-sm">&copy; 2025 BagusDev</p>
         <div class="flex gap-4 text-gray-500">
-            <a href="#" class="hover:text-blue-600">Privacy</a>
-            <a href="#" class="hover:text-blue-600">Terms</a>
-            <a href="#" class="hover:text-blue-600">Contact</a>
+          <a href="#" class="hover:text-blue-600">Privacy</a>
+          <a href="#" class="hover:text-blue-600">Terms</a>
+          <a href="#" class="hover:text-blue-600">Contact</a>
         </div>
-        </div>
+      </div>
     </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
-    const lines = btn.querySelectorAll("span");
-    const nav = document.getElementById("navbar");
+    <!-- SCRIPT -->
+    <script>
+      const btn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      const lines = btn.querySelectorAll("span");
+      const nav = document.getElementById("navbar");
 
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("max-h-0");
-      menu.classList.toggle("max-h-screen");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("max-h-0");
+        menu.classList.toggle("max-h-screen");
 
-      lines[0].classList.toggle("rotate-45");
-      lines[0].classList.toggle("translate-y-1.5");
-      lines[1].classList.toggle("opacity-0");
-      lines[2].classList.toggle("-rotate-45");
-      lines[2].classList.toggle("-translate-y-1.5");
-    });
-
-    window.addEventListener("scroll", () => {
-      nav.classList.toggle("shadow", window.scrollY > 10);
-    });
-
-    // IMAGE PREVIEW
-    const previewImages = document.querySelectorAll(".previewImg");
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-    const closeModal = document.getElementById("closeModal");
-
-    previewImages.forEach(img => {
-      img.addEventListener("click", () => {
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-        modalImg.src = img.src;
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("translate-y-1.5");
+        lines[1].classList.toggle("opacity-0");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("-translate-y-1.5");
       });
-    });
 
-    closeModal.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    });
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("shadow", window.scrollY > 10);
+      });
 
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
+      // IMAGE PREVIEW
+      const previewImages = document.querySelectorAll(".previewImg");
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      const closeModal = document.getElementById("closeModal");
+
+      previewImages.forEach((img) => {
+        img.addEventListener("click", () => {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modalImg.src = img.src;
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
         modal.classList.add("hidden");
         modal.classList.remove("flex");
-      }
-    });
-  </script>
-</body>
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+        }
+      });
+    </script>
+  </body>
 </html>

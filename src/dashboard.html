@@ -1,144 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="icon" type="image/png" href="../image/logo-white.ico">
-  <link rel="stylesheet" href="../output.css">
-</head>
-<body class="bg-gray-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="icon" type="image/png" href="../image/logo-white.ico" />
+    <link rel="stylesheet" href="../output.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="bg-white shadow-sm sticky top-0 z-50 transition-shadow"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+      >
+        <div class="text-xl font-bold text-blue-600">BagusDev</div>
 
-  <!-- NAVBAR -->
-  <nav id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-shadow">
-    <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-      <div class="text-xl font-bold text-blue-600">BagusDev</div>
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+        </button>
 
-      <!-- Hamburger -->
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1">
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-      </button>
-
-      <!-- Menu Desktop -->
-      <div class="hidden md:flex gap-6 text-gray-600">
-        <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
-        <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      </div>
-    </div>
-
-    <!-- Menu Mobile -->
-    <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
-      <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-        <a href="dashboard.html" class="text-blue-600 font-semibold">Dashboard</a>
-        <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-blue-600 text-white py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl font-bold mb-4">Dashboard</h1>
-      <p class="text-blue-100 text-sm max-w-2xl mx-auto">
-        Selamat datang di dashboard! Lihat semua project dan artikel terbaru di sini.
-      </p>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <main class="max-w-6xl mx-auto px-4 py-10">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
-      <!-- CARD GRID -->
-      <section class="lg:col-span-3 order-2 lg:order-1">
-        <div id="cardContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
-      </section>
-
-      <!-- SIDEBAR -->
-      <aside class="order-1 lg:order-2">
-        <div class="space-y-8 lg:sticky lg:top-24">
-
-          <!-- Recent / New Content -->
-          <div class="bg-white rounded-xl shadow-sm p-5">
-            <h4 class="font-semibold mb-4 text-gray-800">Konten Baru</h4>
-            <ul id="notifList" class="space-y-4"></ul>
-          </div>
-
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex gap-6 text-gray-600">
+          <a href="dashboard.html" class="text-blue-600 font-semibold"
+            >Dashboard</a
+          >
+          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
+          <a href="about.html" class="hover:text-blue-600">About</a>
+          <a href="contact.html" class="hover:text-blue-600">Contact</a>
         </div>
-      </aside>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-white border-t mt-10">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-gray-500 text-sm">&copy; 2025 BagusDev. All rights reserved.</p>
-      <div class="flex gap-4 text-gray-500">
-        <a href="#" class="hover:text-blue-600">Privacy</a>
-        <a href="#" class="hover:text-blue-600">Terms</a>
-        <a href="#" class="hover:text-blue-600">Contact</a>
       </div>
-    </div>
-  </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    // Toggle Hamburger
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
-    const lines = btn.querySelectorAll("span");
-    const nav = document.getElementById("navbar");
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+      >
+        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+          <a href="dashboard.html" class="text-blue-600 font-semibold"
+            >Dashboard</a
+          >
+          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
+          <a href="about.html" class="hover:text-blue-600">About</a>
+          <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        </div>
+      </div>
+    </nav>
 
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("max-h-0");
-      menu.classList.toggle("max-h-screen");
-      lines[0].classList.toggle("rotate-45");
-      lines[0].classList.toggle("translate-y-1.5");
-      lines[1].classList.toggle("opacity-0");
-      lines[2].classList.toggle("-rotate-45");
-      lines[2].classList.toggle("-translate-y-1.5");
-    });
+    <!-- HEADER -->
+    <header class="bg-blue-600 text-white py-20">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">Dashboard</h1>
+        <p class="text-blue-100 text-sm max-w-2xl mx-auto">
+          Selamat datang di dashboard! Lihat semua project dan artikel terbaru
+          di sini.
+        </p>
+      </div>
+    </header>
 
-    window.addEventListener("scroll", () => {
-      nav.classList.toggle("shadow-md", window.scrollY > 10);
-    });
+    <!-- MAIN -->
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- CARD GRID -->
+        <section class="lg:col-span-3 order-2 lg:order-1">
+          <div
+            id="cardContainer"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          ></div>
+        </section>
 
-    // Sample Dashboard Cards
-    const categories = [
-    { 
-      title: "Wisata & Kuliner", 
-      desc: "Review tempat wisata dan kuliner.", 
-      image: "../image/wisataKuliner.jpg", 
-      link: "detailKartu/wisata-kuliner.html",
-      date: "2025-12-24"
-    },
-    { 
-      title: "Project IoT", 
-      desc: "Project IoT terbaru.", 
-      image: "../image/IoT.jpg", 
-      link: "detailKartu/project-iot.html",
-      date: "2025-12-22"
-    },
-    { 
-      title: "Computer Vision", 
-      desc: "Project Computer Vision.", 
-      image: "../image/CompVision.jpeg", 
-      link: "detailKartu/project-comp-vis.html",
-      date: "2025-12-21"
-    },
-  ];
+        <!-- SIDEBAR -->
+        <aside class="order-1 lg:order-2">
+          <div class="space-y-8 lg:sticky lg:top-24">
+            <!-- Recent / New Content -->
+            <div class="bg-white rounded-xl shadow-sm p-5">
+              <h4 class="font-semibold mb-4 text-gray-800">Konten Baru</h4>
+              <ul id="notifList" class="space-y-4"></ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
 
-    const container = document.getElementById("cardContainer");
+    <!-- FOOTER -->
+    <footer class="bg-white border-t mt-10">
+      <div
+        class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 BagusDev. All rights reserved.
+        </p>
+        <div class="flex gap-4 text-gray-500">
+          <a href="#" class="hover:text-blue-600">Privacy</a>
+          <a href="#" class="hover:text-blue-600">Terms</a>
+          <a href="#" class="hover:text-blue-600">Contact</a>
+        </div>
+      </div>
+    </footer>
 
-    categories.forEach(item => {
-      container.innerHTML += `
+    <!-- SCRIPT -->
+    <script>
+      // Toggle Hamburger
+      const btn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      const lines = btn.querySelectorAll("span");
+      const nav = document.getElementById("navbar");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("max-h-0");
+        menu.classList.toggle("max-h-screen");
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("translate-y-1.5");
+        lines[1].classList.toggle("opacity-0");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("-translate-y-1.5");
+      });
+
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("shadow-md", window.scrollY > 10);
+      });
+
+      // Sample Dashboard Cards
+      const categories = [
+        {
+          title: "Wisata & Kuliner",
+          desc: "Review tempat wisata dan kuliner.",
+          image: "../image/wisataKuliner.jpg",
+          link: "detailKartu/wisata-kuliner.html",
+          date: "2025-12-24",
+        },
+        {
+          title: "Project IoT",
+          desc: "Project IoT terbaru.",
+          image: "../image/IoT.jpg",
+          link: "detailKartu/project-iot.html",
+          date: "2025-12-22",
+        },
+        {
+          title: "Computer Vision",
+          desc: "Project Computer Vision.",
+          image: "../image/CompVision.jpeg",
+          link: "detailKartu/project-comp-vis.html",
+          date: "2025-12-21",
+        },
+      ];
+
+      const container = document.getElementById("cardContainer");
+
+      categories.forEach((item) => {
+        container.innerHTML += `
         <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group flex flex-col h-full">
           
           <div class="overflow-hidden">
@@ -171,71 +192,76 @@
           </div>
         </article>
       `;
-    });
+      });
 
-    function timeAgo(dateStr) {
-      const now = new Date();
-      const past = new Date(dateStr);
-      const diff = Math.floor((now - past) / 1000); // detik
+      function timeAgo(dateStr) {
+        const now = new Date();
+        const past = new Date(dateStr);
+        const diff = Math.floor((now - past) / 1000); // detik
 
-      if (diff < 60) return `${diff} detik lalu`;
+        if (diff < 60) return `${diff} detik lalu`;
 
-      const minutes = Math.floor(diff / 60);
-      if (minutes < 60) return `${minutes} menit lalu`;
+        const minutes = Math.floor(diff / 60);
+        if (minutes < 60) return `${minutes} menit lalu`;
 
-      const hours = Math.floor(minutes / 60);
-      if (hours < 24) return `${hours} jam lalu`;
+        const hours = Math.floor(minutes / 60);
+        if (hours < 24) return `${hours} jam lalu`;
 
-      const days = Math.floor(hours / 24);
-      if (days < 7) return `${days} hari lalu`;
+        const days = Math.floor(hours / 24);
+        if (days < 7) return `${days} hari lalu`;
 
-      const weeks = Math.floor(days / 7);
-      if (weeks < 4) return `${weeks} minggu lalu`;
+        const weeks = Math.floor(days / 7);
+        if (weeks < 4) return `${weeks} minggu lalu`;
 
-      const months = Math.floor(days / 30);
-      if (months < 12) return `${months} bulan lalu`;
+        const months = Math.floor(days / 30);
+        if (months < 12) return `${months} bulan lalu`;
 
-      const years = Math.floor(days / 365);
-      return `${years} tahun lalu`;
-    }
+        const years = Math.floor(days / 365);
+        return `${years} tahun lalu`;
+      }
 
-    // Sidebar New Content
-    const newContents = [
-      { type: "Wisata & Kuliner", 
-        title: "Pantai Sawangan", 
-        link: "artikel/pantai-sawangan.html" 
-      },
-      { type: "Wisata & Kuliner", 
-        title: "D'Las Lembah Asri Serang Purbalingga", 
-        link: "artikel/dlas.html"
-      },
-      { type: "Wisata & Kuliner", 
-        title: "Dataran Tinggi Dieng", 
-        link: "artikel/dieng.html" 
-      },
-      { type: "Wisata & Kuliner", 
-        title: "Bakso Mercon 03 - Cabang Taman Reptil Purbalingga", 
-        link: "artikel/bakso-mercon.html" 
-      },
-      { type: "Blog", 
-        title: "Belajar CSS dari Nol", 
-        link: "blog/artikel/belajar-tailwind.html" 
-      },
-    ];
+      // Sidebar New Content
+      const newContents = [
+        {
+          type: "Wisata & Kuliner",
+          title: "Pantai Sawangan",
+          link: "artikel/pantai-sawangan.html",
+        },
+        {
+          type: "Wisata & Kuliner",
+          title: "D'Las Lembah Asri Serang Purbalingga",
+          link: "artikel/dlas.html",
+        },
+        {
+          type: "Wisata & Kuliner",
+          title: "Dataran Tinggi Dieng",
+          link: "artikel/dieng.html",
+        },
+        {
+          type: "Wisata & Kuliner",
+          title: "Bakso Mercon 03 - Cabang Taman Reptil Purbalingga",
+          link: "artikel/bakso-mercon.html",
+        },
+        {
+          type: "Blog",
+          title: "Belajar CSS dari Nol",
+          link: "blog/artikel/belajar-tailwind.html",
+        },
+      ];
 
-    const notifList = document.getElementById("notifList");
+      const notifList = document.getElementById("notifList");
 
-    // Fungsi update notifikasi
-    function renderNotifications(contents, max = 4) {
-      // Kosongin dulu list lama
-      notifList.innerHTML = "";
+      // Fungsi update notifikasi
+      function renderNotifications(contents, max = 4) {
+        // Kosongin dulu list lama
+        notifList.innerHTML = "";
 
-      // Ambil max notifikasi terbaru
-      const latest = contents.slice(-max).reverse();
+        // Ambil max notifikasi terbaru
+        const latest = contents.slice(-max).reverse();
 
-      latest.forEach(item => {
-        const li = document.createElement("li");
-        li.innerHTML = `
+        latest.forEach((item) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
           <a href="${item.link}" class="block p-3 rounded-lg hover:bg-blue-50 transition flex justify-between items-center">
             <div>
               <span class="text-xs text-gray-400">${item.type}</span>
@@ -244,19 +270,18 @@
             <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">NEW</span>
           </a>
         `;
-        notifList.appendChild(li);
-      });
-    }
+          notifList.appendChild(li);
+        });
+      }
 
-    // Render pertama kali
-    renderNotifications(newContents);
+      // Render pertama kali
+      renderNotifications(newContents);
 
-    // Contoh: Tambah konten baru otomatis
-    function addNotification(newItem) {
-      newContents.push(newItem);
-      renderNotifications(newContents); // Auto update & hide lama
-    }
-
-  </script>
-</body>
+      // Contoh: Tambah konten baru otomatis
+      function addNotification(newItem) {
+        newContents.push(newItem);
+        renderNotifications(newContents); // Auto update & hide lama
+      }
+    </script>
+  </body>
 </html>

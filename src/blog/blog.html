@@ -1,157 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Blog</title>
 
-    <link rel="icon" type="image/png" href="../../image/logo-white.png">
-    <link rel="stylesheet" href="../../output.css">
-</head>
+    <link rel="icon" type="image/png" href="../../image/logo-white.png" />
+    <link rel="stylesheet" href="../../output.css" />
+  </head>
 
-<body class="bg-gray-100">
-
+  <body class="bg-gray-100">
     <!-- NAVBAR -->
     <nav
-        id = "navbar"
-        class="
-          bg-white
-          shadow-sm
-          sticky top-0 z-50
-          transition-shadow
-        "
+      id="navbar"
+      class="bg-white shadow-sm sticky top-0 z-50 transition-shadow"
     >
+      <div
+        class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+      >
+        <!--Logo-->
+        <div class="text-xl font-bold text-blue-600">BagusDev</div>
 
-        <div class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+          ></span>
+        </button>
 
-            <!--Logo-->
-            <div class="text-xl font-bold text-blue-600">
-                BagusDev
-            </div>
-
-            <!-- Hamburger -->
-            <button id="menuBtn" class="md:hidden flex flex-col gap-1">
-                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-                <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
-            </button>
-
-            <!-- Menu Desktop -->
-            <div class="hidden md:flex gap-6 text-gray-600">
-                <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
-                <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
-                <a href="../about.html" class="hover:text-blue-600">About</a>
-                <a href="../contact.html" class="hover:text-blue-600">Contact</a>
-            </div>
-
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex gap-6 text-gray-600">
+          <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+          <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
+          <a href="../about.html" class="hover:text-blue-600">About</a>
+          <a href="../contact.html" class="hover:text-blue-600">Contact</a>
         </div>
+      </div>
 
-        <!-- Menu Mobile -->
-        <div
-            id="mobileMenu"
-            class="
-                md:hidden
-                overflow-hidden
-                max-h-0
-                transition-all duration-300 ease-in-out
-            "
-        >
-
-            <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-                <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
-                <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
-                <a href="../about.html" class="hover:text-blue-600">About</a>
-                <a href="../contact.html" class="hover:text-blue-600">Contact</a>
-            </div>
+      <!-- Menu Mobile -->
+      <div
+        id="mobileMenu"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+      >
+        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
+          <a href="../dashboard.html" class="hover:text-blue-600">Dashboard</a>
+          <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
+          <a href="../about.html" class="hover:text-blue-600">About</a>
+          <a href="../contact.html" class="hover:text-blue-600">Contact</a>
         </div>
-
+      </div>
     </nav>
 
-     <!--HEADER-->
+    <!--HEADER-->
     <header class="bg-blue-600 text-white py-20">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-
-        <h1 class="text-4xl md:text-4xl font-bold mb-4">
-            BagusBlog
-        </h1>
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-4xl font-bold mb-4">BagusBlog</h1>
 
         <p class="text-blue-100 text-sm max-w-2xl mx-auto">
-            Temukan berbagai artikel menarik seputar teknologi, pengembangan web, tips coding, dan tren terbaru di dunia IT. Dapatkan wawasan baru dan inspirasi untuk proyek Anda berikutnya di BagusDev Blog.
+          Temukan berbagai artikel menarik seputar teknologi, pengembangan web,
+          tips coding, dan tren terbaru di dunia IT. Dapatkan wawasan baru dan
+          inspirasi untuk proyek Anda berikutnya di BagusDev Blog.
         </p>
-
-        </div>
+      </div>
     </header>
-    
+
     <main class="max-w-6xl mx-auto px-4 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- BLOG LIST -->
+        <section class="lg:col-span-3 order-2 lg:order-1">
+          <div
+            id="cardBlog"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          ></div>
+        </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- SIDEBAR -->
+        <aside class="order-1 lg:order-2">
+          <div class="space-y-8 lg:sticky lg:top-24">
+            <!-- Search -->
+            <div class="bg-white rounded-xl shadow-sm p-5">
+              <h4 class="font-semibold mb-3 text-gray-800">Search</h4>
+              <input
+                type="text"
+                placeholder="Cari artikel..."
+                class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
 
-            <!-- BLOG LIST -->
-            <section class="lg:col-span-3 order-2 lg:order-1">
-                <div
-                    id="cardBlog"
-                    class="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                ></div>
-            </section>
-
-            <!-- SIDEBAR -->
-            <aside class="order-1 lg:order-2">
-                <div class="space-y-8 lg:sticky lg:top-24">
-
-                    <!-- Search -->
-                    <div class="bg-white rounded-xl shadow-sm p-5">
-                        <h4 class="font-semibold mb-3 text-gray-800">Search</h4>
-                        <input
-                            type="text"
-                            placeholder="Cari artikel..."
-                            class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        >
-                    </div>
-
-                    <!-- Categories -->
-                    <div class="bg-white rounded-xl shadow-sm p-5">
-                        <h4 class="font-semibold mb-3 text-gray-800">Kategori</h4>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li data-filter="all" class="hover:text-blue-600 cursor-pointer font-medium">
-                                All
-                            </li>
-                            <li data-filter="CSS" class="hover:text-blue-600 cursor-pointer">
-                                CSS
-                            </li>
-                            <li data-filter="JavaScript" class="hover:text-blue-600 cursor-pointer">
-                                JavaScript
-                            </li>
-                            <li data-filter="Career" class="hover:text-blue-600 cursor-pointer">
-                                Career
-                            </li>
-                            <li data-filter="Tutorial" class="hover:text-blue-600 cursor-pointer">
-                                Tutorial
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </aside>
-
-        </div>
+            <!-- Categories -->
+            <div class="bg-white rounded-xl shadow-sm p-5">
+              <h4 class="font-semibold mb-3 text-gray-800">Kategori</h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li
+                  data-filter="all"
+                  class="hover:text-blue-600 cursor-pointer font-medium"
+                >
+                  All
+                </li>
+                <li
+                  data-filter="CSS"
+                  class="hover:text-blue-600 cursor-pointer"
+                >
+                  CSS
+                </li>
+                <li
+                  data-filter="JavaScript"
+                  class="hover:text-blue-600 cursor-pointer"
+                >
+                  JavaScript
+                </li>
+                <li
+                  data-filter="Career"
+                  class="hover:text-blue-600 cursor-pointer"
+                >
+                  Career
+                </li>
+                <li
+                  data-filter="Tutorial"
+                  class="hover:text-blue-600 cursor-pointer"
+                >
+                  Tutorial
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
     </main>
-
 
     <!-- FOOTER -->
     <footer class="bg-white border-t mt-10">
-        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div
+        class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
         <p class="text-gray-500 text-sm">
-            &copy; 2025 BagusDev. All rights reserved.
+          &copy; 2025 BagusDev. All rights reserved.
         </p>
         <div class="flex gap-4 text-gray-500">
-            <a href="#" class="hover:text-blue-600">Privacy</a>
-            <a href="#" class="hover:text-blue-600">Terms</a>
-            <a href="#" class="hover:text-blue-600">Contact</a>
+          <a href="#" class="hover:text-blue-600">Privacy</a>
+          <a href="#" class="hover:text-blue-600">Terms</a>
+          <a href="#" class="hover:text-blue-600">Contact</a>
         </div>
-        </div>
+      </div>
     </footer>
 
     <script src="js/blog.js"></script>
-    
-</body>
+  </body>
 </html>

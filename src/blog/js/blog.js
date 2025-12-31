@@ -12,18 +12,18 @@ function timeAgo(dateString) {
   const diffMs = now - past;
 
   const minute = 1000 * 60;
-  const hour   = minute * 60;
-  const day    = hour * 24;
-  const week   = day * 7;
-  const month  = day * 30;
-  const year   = day * 365;
+  const hour = minute * 60;
+  const day = hour * 24;
+  const week = day * 7;
+  const month = day * 30;
+  const year = day * 365;
 
   if (diffMs < minute) return "baru saja";
-  if (diffMs < hour)   return `${Math.floor(diffMs / minute)} menit lalu`;
-  if (diffMs < day)    return `${Math.floor(diffMs / hour)} jam lalu`;
-  if (diffMs < week)   return `${Math.floor(diffMs / day)} hari lalu`;
-  if (diffMs < month)  return `${Math.floor(diffMs / week)} minggu lalu`;
-  if (diffMs < year)   return `${Math.floor(diffMs / month)} bulan lalu`;
+  if (diffMs < hour) return `${Math.floor(diffMs / minute)} menit lalu`;
+  if (diffMs < day) return `${Math.floor(diffMs / hour)} jam lalu`;
+  if (diffMs < week) return `${Math.floor(diffMs / day)} hari lalu`;
+  if (diffMs < month) return `${Math.floor(diffMs / week)} minggu lalu`;
+  if (diffMs < year) return `${Math.floor(diffMs / month)} bulan lalu`;
 
   return `${Math.floor(diffMs / year)} tahun lalu`;
 }
@@ -32,8 +32,8 @@ function timeAgo(dateString) {
    FETCH DATA BLOG
 ================================ */
 fetch("blog.json")
-  .then(res => res.json())
-  .then(blog => {
+  .then((res) => res.json())
+  .then((blog) => {
     // simpan data
     allBlogs = blog;
 
@@ -42,9 +42,8 @@ fetch("blog.json")
 
     renderBlogs(allBlogs);
   })
-  .catch(err => {
-    cardBlog.innerHTML =
-      "<p class='text-red-500'>Gagal load artikel.</p>";
+  .catch((err) => {
+    cardBlog.innerHTML = "<p class='text-red-500'>Gagal load artikel.</p>";
     console.error(err);
   });
 
@@ -60,7 +59,7 @@ function renderBlogs(data) {
     return;
   }
 
-  data.forEach(item => {
+  data.forEach((item) => {
     const secCategoryBadge = item["sec-category"]
       ? `<span class="px-2 py-1 bg-purple-50 text-purple-600 rounded-full font-medium">
           ${item["sec-category"]}
@@ -120,12 +119,12 @@ function renderBlogs(data) {
 /* ===============================
    FILTER KATEGORI
 ================================ */
-categoryItems.forEach(item => {
+categoryItems.forEach((item) => {
   item.addEventListener("click", () => {
     const filter = item.dataset.filter;
 
     // active state
-    categoryItems.forEach(i =>
+    categoryItems.forEach((i) =>
       i.classList.remove("text-blue-600", "font-semibold")
     );
     item.classList.add("text-blue-600", "font-semibold");
@@ -135,9 +134,8 @@ categoryItems.forEach(item => {
       return;
     }
 
-    const filteredBlogs = allBlogs.filter(blog =>
-      blog.category === filter ||
-      blog["sec-category"] === filter
+    const filteredBlogs = allBlogs.filter(
+      (blog) => blog.category === filter || blog["sec-category"] === filter
     );
 
     renderBlogs(filteredBlogs);
@@ -148,7 +146,7 @@ categoryItems.forEach(item => {
 ================================ */
 const btn = document.getElementById("menuBtn");
 const menu = document.getElementById("mobileMenu");
-const nav  = document.getElementById("navbar");
+const nav = document.getElementById("navbar");
 
 if (btn && menu) {
   const lines = btn.querySelectorAll("span");
@@ -175,4 +173,3 @@ if (btn && menu) {
 window.addEventListener("scroll", () => {
   nav?.classList.toggle("shadow-md", window.scrollY > 10);
 });
-

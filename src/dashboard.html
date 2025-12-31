@@ -3,285 +3,315 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="icon" type="image/png" href="../image/logo-white.ico" />
+    <title>Dashboard | BagusDev</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="../output.css" />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(14px);
+      }
+    </style>
   </head>
-  <body class="bg-gray-100">
-    <!-- NAVBAR -->
+
+  <body class="bg-slate-50 text-slate-900 antialiased">
     <nav
       id="navbar"
-      class="bg-white shadow-sm sticky top-0 z-50 transition-shadow"
+      class="glass border-b border-slate-200 sticky top-0 z-50 transition-all"
     >
       <div
-        class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <div class="text-xl font-bold text-blue-600">BagusDev</div>
+        <div class="text-xl font-extrabold tracking-tighter text-blue-600">
+          BAGUS<span class="text-slate-400">DEV.</span>
+        </div>
 
-        <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+        <div class="hidden md:flex gap-8 text-sm font-bold text-slate-500">
+          <a href="../index.html" class="hover:text-blue-600 transition"
+            >Beranda</a
+          >
+          <a href="dashboard.html" class="text-blue-600">Dashboard</a>
+          <a href="blog/blog.html" class="hover:text-blue-600 transition"
+            >Blog</a
+          >
+          <a href="about.html" class="hover:text-blue-600 transition">About</a>
+        </div>
+
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2">
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
         </button>
-
-        <!-- Menu Desktop -->
-        <div class="hidden md:flex gap-6 text-gray-600">
-          <a href="dashboard.html" class="text-blue-600 font-semibold"
-            >Dashboard</a
-          >
-          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-          <a href="about.html" class="hover:text-blue-600">About</a>
-          <a href="contact.html" class="hover:text-blue-600">Contact</a>
-        </div>
       </div>
 
-      <!-- Menu Mobile -->
       <div
         id="mobileMenu"
-        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 bg-white border-b"
       >
-        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-          <a href="dashboard.html" class="text-blue-600 font-semibold"
-            >Dashboard</a
-          >
-          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-          <a href="about.html" class="hover:text-blue-600">About</a>
-          <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        <div
+          class="flex flex-col items-center gap-6 py-8 font-bold text-slate-600"
+        >
+          <a href="../index.html">Beranda</a>
+          <a href="dashboard.html" class="text-blue-600">Dashboard</a>
+          <a href="blog/blog.html">Blog</a>
+          <a href="about.html">About</a>
         </div>
       </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="bg-blue-600 text-white py-20">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-4">Dashboard</h1>
-        <p class="text-blue-100 text-sm max-w-2xl mx-auto">
-          Selamat datang di dashboard! Lihat semua project dan artikel terbaru
-          di sini.
+    <header class="relative bg-slate-900 py-24 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent"
+      ></div>
+      <div class="relative max-w-6xl mx-auto px-6 text-center md:text-left">
+        <h1
+          class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight"
+        >
+          Main Dashboard
+        </h1>
+        <p
+          class="text-blue-100/60 text-base md:text-lg max-w-2xl leading-relaxed"
+        >
+          Pusat kendali project dan dokumentasi perjalanan digital gue. Semua
+          ada di sini, dari coding sampe kulineran.
         </p>
       </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="max-w-6xl mx-auto px-4 py-10">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- CARD GRID -->
+    <div class="max-w-6xl mx-auto px-6 -mt-10 relative z-20">
+      <div
+        class="bg-white p-2 rounded-[2.5rem] shadow-2xl shadow-blue-900/10 border border-slate-100 flex items-center group focus-within:ring-4 focus-within:ring-blue-600/5 transition-all"
+      >
+        <div class="flex-1 relative">
+          <div
+            class="absolute inset-y-0 left-5 flex items-center pointer-events-none"
+          >
+            <svg
+              class="w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari project atau kategori..."
+            class="w-full pl-14 pr-6 py-5 bg-transparent rounded-full text-slate-700 font-bold focus:outline-none placeholder:text-slate-400 placeholder:font-medium tracking-tight"
+          />
+        </div>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
         <section class="lg:col-span-3 order-2 lg:order-1">
+          <div class="flex items-center gap-4 mb-10">
+            <h2
+              class="text-2xl font-black tracking-tight uppercase italic text-slate-800"
+            >
+              Project Terkini
+            </h2>
+            <div class="flex-1 h-[2px] bg-slate-100"></div>
+          </div>
           <div
             id="cardContainer"
-            class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-10"
           ></div>
         </section>
 
-        <!-- SIDEBAR -->
         <aside class="order-1 lg:order-2">
-          <div class="space-y-8 lg:sticky lg:top-24">
-            <!-- Recent / New Content -->
-            <div class="bg-white rounded-xl shadow-sm p-5">
-              <h4 class="font-semibold mb-4 text-gray-800">Konten Baru</h4>
-              <ul id="notifList" class="space-y-4"></ul>
-            </div>
+          <div
+            class="bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-50 p-8 lg:sticky lg:top-28"
+          >
+            <h4
+              class="font-bold text-slate-900 mb-6 flex items-center gap-3 tracking-tight"
+            >
+              <span class="relative flex h-3 w-3">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
+                ></span>
+              </span>
+              Update Baru
+            </h4>
+            <ul id="notifList" class="space-y-1"></ul>
           </div>
         </aside>
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t mt-10">
-      <div
-        class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
-      >
-        <p class="text-gray-500 text-sm">
-          &copy; 2025 BagusDev. All rights reserved.
-        </p>
-        <div class="flex gap-4 text-gray-500">
-          <a href="#" class="hover:text-blue-600">Privacy</a>
-          <a href="#" class="hover:text-blue-600">Terms</a>
-          <a href="#" class="hover:text-blue-600">Contact</a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- SCRIPT -->
     <script>
-      // Toggle Hamburger
-      const btn = document.getElementById("menuBtn");
-      const menu = document.getElementById("mobileMenu");
-      const lines = btn.querySelectorAll("span");
-      const nav = document.getElementById("navbar");
-
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("max-h-0");
-        menu.classList.toggle("max-h-screen");
-        lines[0].classList.toggle("rotate-45");
-        lines[0].classList.toggle("translate-y-1.5");
-        lines[1].classList.toggle("opacity-0");
-        lines[2].classList.toggle("-rotate-45");
-        lines[2].classList.toggle("-translate-y-1.5");
-      });
-
-      window.addEventListener("scroll", () => {
-        nav.classList.toggle("shadow-md", window.scrollY > 10);
-      });
-
-      // Sample Dashboard Cards
-      const categories = [
+      // --- DATA MASTER (Path Link GitHub Pages) ---
+      const projects = [
         {
           title: "Wisata & Kuliner",
-          desc: "Review tempat wisata dan kuliner.",
+          desc: "Review jujur tempat wisata hits dan kuliner lokal.",
           image: "../image/wisataKuliner.jpg",
           link: "detailKartu/wisata-kuliner.html",
           date: "2025-12-24",
+          category: "Travel",
         },
         {
           title: "Project IoT",
-          desc: "Project IoT terbaru.",
+          desc: "Sistem monitoring suhu & kelembaban pake ESP32.",
           image: "../image/IoT.jpg",
           link: "detailKartu/project-iot.html",
           date: "2025-12-22",
+          category: "Tech",
         },
         {
           title: "Computer Vision",
-          desc: "Project Computer Vision.",
+          desc: "Deteksi masker wajah pake OpenCV dan Python.",
           image: "../image/CompVision.jpeg",
           link: "detailKartu/project-comp-vis.html",
           date: "2025-12-21",
+          category: "AI",
         },
       ];
 
-      const container = document.getElementById("cardContainer");
-
-      categories.forEach((item) => {
-        container.innerHTML += `
-        <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group flex flex-col h-full">
-          
-          <div class="overflow-hidden">
-            <img 
-              src="${item.image}" 
-              alt="${item.title}" 
-              class="w-full h-48 object-cover blur-sm group-hover:scale-105 transition duration-500" 
-              loading="lazy"
-              onload="this.classList.remove('blur-sm')"
-            >
-          </div>
-
-          <div class="p-6 flex flex-col flex-1">
-            <span class="text-xs text-gray-400 mb-1">
-              ${timeAgo(item.date)}
-            </span>
-
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">
-              ${item.title}
-            </h3>
-
-            <p class="text-sm text-gray-600 mb-6">
-              ${item.desc}
-            </p>
-
-            <a href="${item.link}" 
-              class="mt-auto inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:gap-2 transition-all">
-              Lihat Detail →
-            </a>
-          </div>
-        </article>
-      `;
-      });
-
-      function timeAgo(dateStr) {
-        const now = new Date();
-        const past = new Date(dateStr);
-        const diff = Math.floor((now - past) / 1000); // detik
-
-        if (diff < 60) return `${diff} detik lalu`;
-
-        const minutes = Math.floor(diff / 60);
-        if (minutes < 60) return `${minutes} menit lalu`;
-
-        const hours = Math.floor(minutes / 60);
-        if (hours < 24) return `${hours} jam lalu`;
-
-        const days = Math.floor(hours / 24);
-        if (days < 7) return `${days} hari lalu`;
-
-        const weeks = Math.floor(days / 7);
-        if (weeks < 4) return `${weeks} minggu lalu`;
-
-        const months = Math.floor(days / 30);
-        if (months < 12) return `${months} bulan lalu`;
-
-        const years = Math.floor(days / 365);
-        return `${years} tahun lalu`;
-      }
-
-      // Sidebar New Content
-      const newContents = [
+      const updates = [
         {
-          type: "Wisata & Kuliner",
-          title: "D'Las Lembah Asri Serang Purbalingga",
+          type: "Wisata",
+          title: "Lembah Asri Serang",
           link: "artikel/dlas.html",
         },
         {
-          type: "Wisata & Kuliner",
+          type: "Wisata",
           title: "Dataran Tinggi Dieng",
           link: "artikel/dieng.html",
         },
         {
-          type: "Wisata & Kuliner",
-          title: "Bakso Mercon 03 - Cabang Taman Reptil Purbalingga",
-          link: "artikel/bakso-mercon.html",
-        },
-        {
           type: "Blog",
-          title: "Belajar CSS dari Nol",
-          link: "blog/artikel/belajar-tailwind.html",
-        },
-         {
-          type: "Blog",
-          title: "Tips Bikin Portfolio Web Keren",
+          title: "Tips Portfolio 2026",
           link: "blog/artikel/tutor-portfolio.html",
         },
       ];
 
+      // --- DOM ELEMENTS ---
+      const container = document.getElementById("cardContainer");
       const notifList = document.getElementById("notifList");
+      const searchInput = document.getElementById("searchInput");
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const lines = menuBtn.querySelectorAll("span");
 
-      // Fungsi update notifikasi
-      function renderNotifications(contents, max = 4) {
-        // Kosongin dulu list lama
-        notifList.innerHTML = "";
+      // --- FUNCTIONS ---
+      function timeAgo(dateStr) {
+        const diff = Math.floor((new Date() - new Date(dateStr)) / 1000);
+        if (diff < 86400) return "Baru rilis";
+        return `${Math.floor(diff / 86400)} hari lalu`;
+      }
 
-        // Ambil max notifikasi terbaru
-        const latest = contents.slice(-max).reverse();
+      function renderProjects(filter = "") {
+        container.innerHTML = "";
+        const filtered = projects.filter(
+          (p) =>
+            p.title.toLowerCase().includes(filter.toLowerCase()) ||
+            p.category.toLowerCase().includes(filter.toLowerCase())
+        );
 
-        latest.forEach((item) => {
-          const li = document.createElement("li");
-          li.innerHTML = `
-          <a href="${item.link}" class="block p-3 rounded-lg hover:bg-blue-50 transition flex justify-between items-center">
-            <div>
-              <span class="text-xs text-gray-400">${item.type}</span>
-              <p class="text-gray-700 font-medium">${item.title}</p>
-            </div>
-            <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">NEW</span>
-          </a>
-        `;
-          notifList.appendChild(li);
+        if (filtered.length === 0) {
+          container.innerHTML = `<div class='col-span-full py-20 text-center text-slate-400 font-bold italic'>Project gak ketemu bang... 🔍</div>`;
+          return;
+        }
+
+        filtered.forEach((item) => {
+          container.innerHTML += `
+                <article class="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 group flex flex-col h-full">
+                    <div class="relative overflow-hidden aspect-video">
+                        <img src="${
+                          item.image
+                        }" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" alt="${
+            item.title
+          }">
+                        <div class="absolute top-5 left-5">
+                            <span class="px-4 py-1.5 bg-white/90 backdrop-blur-md text-[10px] font-black text-blue-600 rounded-full uppercase tracking-[0.15em] shadow-sm italic">
+                                ${item.category}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-9 flex flex-col flex-1">
+                        <span class="text-[10px] font-bold text-slate-400 mb-3 uppercase tracking-widest">${timeAgo(
+                          item.date
+                        )}</span>
+                        <h3 class="text-xl font-black text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition tracking-tighter">${
+                          item.title
+                        }</h3>
+                        <p class="text-slate-500 text-sm mb-10 leading-relaxed">${
+                          item.desc
+                        }</p>
+                        <a href="${
+                          item.link
+                        }" class="mt-auto inline-flex items-center gap-2 text-blue-600 text-sm font-black hover:gap-4 transition-all uppercase tracking-wider group/btn">
+                            Explore Detail 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        </a>
+                    </div>
+                </article>`;
         });
       }
 
-      // Render pertama kali
-      renderNotifications(newContents);
-
-      // Contoh: Tambah konten baru otomatis
-      function addNotification(newItem) {
-        newContents.push(newItem);
-        renderNotifications(newContents); // Auto update & hide lama
+      function renderUpdates() {
+        notifList.innerHTML = "";
+        updates
+          .slice()
+          .reverse()
+          .forEach((item) => {
+            notifList.innerHTML += `
+                <li>
+                    <a href="${item.link}" class="group block p-4 rounded-2xl hover:bg-blue-50 transition-all border border-transparent hover:border-blue-100">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-1 block">${item.type}</span>
+                        <p class="text-slate-700 font-bold text-sm leading-tight group-hover:text-blue-700 transition">${item.title}</p>
+                    </a>
+                </li>`;
+          });
       }
+
+      // --- EVENTS ---
+      searchInput.addEventListener("input", (e) =>
+        renderProjects(e.target.value)
+      );
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("max-h-0");
+        mobileMenu.classList.toggle("max-h-screen");
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("translate-y-2");
+        lines[1].classList.toggle("opacity-0");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("-translate-y-2");
+      });
+
+      // INIT
+      renderProjects();
+      renderUpdates();
     </script>
   </body>
 </html>

@@ -3,152 +3,257 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - BagusDev</title>
+    <title>Contact Us | BagusDev - Let's Collaborate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="icon" type="image/png" href="../image/logo-white.ico" />
     <link rel="stylesheet" href="../output.css" />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .form-input:focus {
+        transform: translateY(-2px);
+      }
+    </style>
   </head>
 
-  <body class="bg-gray-100">
-    <!-- NAVBAR -->
+  <body class="bg-slate-50 text-slate-900 antialiased">
     <nav
       id="navbar"
-      class="bg-white shadow-sm sticky top-0 z-50 transition-shadow"
+      class="glass border-b border-slate-200 sticky top-0 z-50 transition-all"
     >
       <div
-        class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <div class="text-xl font-bold text-blue-600">BagusDev</div>
+        <div class="text-xl font-extrabold tracking-tighter text-blue-600">
+          BAGUS<span class="text-slate-400">DEV.</span>
+        </div>
 
-        <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2">
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
         </button>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex gap-6 text-gray-600">
-          <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
-          <a href="../src/blog/blog.html" class="hover:text-blue-600">Blog</a>
-          <a href="about.html" class="hover:text-blue-600">About</a>
-          <a href="contact.html" class="text-blue-600 font-semibold">Contact</a>
+        <div class="hidden md:flex gap-8 text-sm font-bold text-slate-500">
+          <a href="dashboard.html" class="hover:text-blue-600 transition"
+            >Dashboard</a
+          >
+          <a href="blog/blog.html" class="hover:text-blue-600 transition"
+            >Blog</a
+          >
+          <a href="about.html" class="hover:text-blue-600 transition">About</a>
+          <a href="contact.html" class="text-blue-600">Contact</a>
         </div>
       </div>
 
-      <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white"
       >
-        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-          <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
-          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-          <a href="about.html" class="hover:text-blue-600">About</a>
-          <a href="contact.html" class="text-blue-600 font-semibold">Contact</a>
+        <div
+          class="flex flex-col items-center gap-6 py-8 font-bold text-slate-600 border-b"
+        >
+          <a href="dashboard.html">Dashboard</a>
+          <a href="blog/blog.html">Blog</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="text-blue-600">Contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="bg-blue-600 text-white py-20">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h1>
-        <p class="text-blue-100 text-lg">
-          Kami siap membantu. Kirim pesan atau pertanyaan Anda.
+    <header class="relative bg-slate-900 py-20 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-900/50"
+      ></div>
+      <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <h1
+          class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter uppercase italic"
+        >
+          Hubungi Kami.
+        </h1>
+        <p class="text-blue-100/70 text-lg max-w-xl mx-auto font-medium">
+          Ada project keren atau sekadar mau say hi? Drop pesan lo di bawah,
+          kita bakal bales secepat kilat.
         </p>
       </div>
     </header>
 
-    <!-- FORM -->
-    <main class="max-w-3xl mx-auto px-4 py-16">
-      <form class="bg-white p-6 md:p-8 rounded-lg shadow-md" id="contactForm">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800">Kirim Pesan</h2>
-
-        <div class="mb-4">
-          <label class="block mb-2 font-medium text-gray-700">Nama</label>
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="Nama lengkap"
-            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+    <main
+      class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-5 gap-12 items-start"
+    >
+      <div class="md:col-span-2 space-y-8">
+        <div class="space-y-4">
+          <h2
+            class="text-2xl font-black text-slate-900 tracking-tight uppercase italic"
+          >
+            Info Kontak
+          </h2>
+          <p class="text-slate-500 font-medium">
+            Layanan support kami aktif Senin - Jumat, jam 09.00 - 17.00 WIB.
+          </p>
         </div>
 
-        <div class="mb-4">
-          <label class="block mb-2 font-medium text-gray-700">Email</label>
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Email Anda"
-            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+        <div class="space-y-6">
+          <div class="flex items-center gap-4 group">
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+            <div>
+              <p
+                class="text-xs font-black text-slate-400 uppercase tracking-widest"
+              >
+                Alamat
+              </p>
+              <p class="text-slate-800 font-bold">
+                Purwokerto, Jawa Tengah, Indonesia
+              </p>
+            </div>
+          </div>
 
-        <div class="mb-6">
-          <label class="block mb-2 font-medium text-gray-700">Pesan</label>
-          <textarea
-            rows="5"
-            name="message"
-            required
-            placeholder="Tulis pesan Anda..."
-            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Kirim Pesan
-        </button>
-      </form>
-    </main>
-
-    <!-- INFO -->
-    <section class="max-w-6xl mx-auto px-4 pb-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div>
-          <h3 class="text-xl font-bold mb-2">Alamat</h3>
-          <p class="text-gray-700">Purwokerto, Jawa Tengah</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold mb-2">Telepon</h3>
-          <p class="text-gray-700">+62 812 3456 7890</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold mb-2">Email</h3>
-          <p class="text-gray-700">contact@bagusdev.com</p>
+          <div class="flex items-center gap-4 group">
+            <div
+              class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <div>
+              <p
+                class="text-xs font-black text-slate-400 uppercase tracking-widest"
+              >
+                Email
+              </p>
+              <p class="text-slate-800 font-bold">contact@bagusdev.com</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t">
-      <div
-        class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
-      >
-        <p class="text-gray-500 text-sm">
-          &copy; 2025 BagusDev. All rights reserved.
+      <div class="md:col-span-3">
+        <form
+          class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100"
+          id="contactForm"
+        >
+          <h2 class="text-2xl font-black mb-8 text-slate-900 tracking-tight">
+            Drop your message <span class="text-blue-600">here.</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="space-y-2">
+              <label
+                class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
+                >Nama Lengkap</label
+              >
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Joni Doe"
+                class="w-full px-6 py-4 bg-slate-50 border-transparent border-2 rounded-2xl focus:bg-white focus:border-blue-600 focus:outline-none transition-all duration-300 font-medium"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
+                >Email Aktif</label
+              >
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="joni@gmail.com"
+                class="w-full px-6 py-4 bg-slate-50 border-transparent border-2 rounded-2xl focus:bg-white focus:border-blue-600 focus:outline-none transition-all duration-300 font-medium"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2 mb-8">
+            <label
+              class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
+              >Pesan Anda</label
+            >
+            <textarea
+              rows="5"
+              name="message"
+              required
+              placeholder="Bisa buatin landing page keren nggak bang?..."
+              class="w-full px-6 py-4 bg-slate-50 border-transparent border-2 rounded-2xl focus:bg-white focus:border-blue-600 focus:outline-none transition-all duration-300 font-medium"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white px-8 py-5 rounded-2xl font-black tracking-tighter uppercase italic hover:bg-slate-900 hover:scale-[1.02] transition shadow-xl shadow-blue-500/20 active:scale-95"
+          >
+            Kirim Pesan Sekarang 🚀
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-100 py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p
+          class="text-slate-400 text-xs font-black uppercase tracking-[0.2em] italic"
+        >
+          © 2026 BagusDev. Built with passion & 200% concentration.
         </p>
-        <div class="flex gap-4 text-gray-500">
-          <a href="#" class="hover:text-blue-600">Privacy</a>
-          <a href="#" class="hover:text-blue-600">Terms</a>
-          <a href="#" class="hover:text-blue-600">Contact</a>
-        </div>
       </div>
     </footer>
 
-    <!-- SCRIPT -->
-    <script defer>
+    <script>
       const btn = document.getElementById("menuBtn");
       const menu = document.getElementById("mobileMenu");
       const lines = btn.querySelectorAll("span");
@@ -157,52 +262,36 @@
       btn.addEventListener("click", () => {
         menu.classList.toggle("max-h-0");
         menu.classList.toggle("max-h-screen");
-
         lines[0].classList.toggle("rotate-45");
-        lines[0].classList.toggle("translate-y-1.5");
-
+        lines[0].classList.toggle("translate-y-2");
         lines[1].classList.toggle("opacity-0");
-
         lines[2].classList.toggle("-rotate-45");
-        lines[2].classList.toggle("-translate-y-1.5");
+        lines[2].classList.toggle("-translate-y-2");
       });
 
       window.addEventListener("scroll", () => {
-        nav.classList.toggle("shadow-md", window.scrollY > 10);
+        nav.classList.toggle("shadow-xl", window.scrollY > 10);
       });
-    </script>
 
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/emailjs@3/dist/email.min.js"
-    ></script>
-
-    <script defer>
-      document.addEventListener("DOMContentLoaded", function () {
-        emailjs.init("N7PtFR4dGCyvvehOC");
-
-        const form = document.getElementById("contactForm");
-
-        if (!form) {
-          console.error("Form contactForm tidak ditemukan");
-          return;
-        }
-
-        form.addEventListener("submit", function (e) {
+      // Dummy Handler (Biar kelihatan pro)
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
           e.preventDefault();
+          const btn = this.querySelector("button");
+          const originalText = btn.innerHTML;
 
-          emailjs
-            .sendForm("service_rm7uwcr", "template_5h38x8e", this)
-            .then(() => {
-              alert("Pesan berhasil dikirim 🚀");
-              form.reset();
-            })
-            .catch((error) => {
-              alert("Gagal ngirim pesan 😭");
-              console.error(error);
-            });
+          btn.innerHTML = "SABAR YA, LAGI DIKIRIM...";
+          btn.disabled = true;
+
+          // Simulasi loading 2 detik
+          setTimeout(() => {
+            alert("Pesan Berhasil Terkirim (Simulasi)! 🚀");
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            this.reset();
+          }, 2000);
         });
-      });
     </script>
   </body>
 </html>

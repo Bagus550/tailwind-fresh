@@ -3,138 +3,248 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - BagusDev</title>
+    <title>About Us | BagusDev - Future Ready Web Agency</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="icon" type="image/png" href="../image/logo-white.png" />
     <link rel="stylesheet" href="../output.css" />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+    </style>
   </head>
 
-  <body class="bg-gray-100">
-    <!-- NAVBAR -->
+  <body class="bg-slate-50 text-slate-900 antialiased">
     <nav
       id="navbar"
-      class="bg-white shadow-sm sticky top-0 z-50 transition-shadow"
+      class="glass border-b border-slate-200 sticky top-0 z-50 transition-all"
     >
       <div
-        class="max-w-6xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <div class="text-lg md:text-xl font-bold text-blue-600">BagusDev</div>
+        <div class="text-xl font-extrabold tracking-tighter text-blue-600">
+          BAGUS<span class="text-slate-400">DEV.</span>
+        </div>
 
-        <button id="menuBtn" class="md:hidden flex flex-col gap-1">
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2">
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
           <span
-            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"
+            class="block w-6 h-0.5 bg-slate-700 transition-all duration-300"
           ></span>
         </button>
 
-        <div class="hidden md:flex gap-6 text-gray-600">
-          <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
-          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-          <a href="about.html" class="text-blue-600 font-semibold">About</a>
-          <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        <div class="hidden md:flex gap-8 text-sm font-bold text-slate-500">
+          <a href="dashboard.html" class="hover:text-blue-600 transition"
+            >Dashboard</a
+          >
+          <a href="blog/blog.html" class="hover:text-blue-600 transition"
+            >Blog</a
+          >
+          <a href="about.html" class="text-blue-600">About</a>
+          <a href="contact.html" class="hover:text-blue-600 transition"
+            >Contact</a
+          >
         </div>
       </div>
 
       <div
         id="mobileMenu"
-        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white"
       >
-        <div class="flex flex-col items-center gap-3 pb-6 text-gray-600">
-          <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
-          <a href="blog/blog.html" class="hover:text-blue-600">Blog</a>
-          <a href="about.html" class="text-blue-600 font-semibold">About</a>
-          <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        <div
+          class="flex flex-col items-center gap-6 py-8 font-bold text-slate-600 border-b"
+        >
+          <a href="dashboard.html">Dashboard</a>
+          <a href="blog/blog.html">Blog</a>
+          <a href="about.html" class="text-blue-600">About</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="bg-blue-600 text-white py-20">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tentang BagusDev</h1>
-        <p class="text-lg md:text-xl">
-          Kami fokus bikin website modern, cepat, dan user-friendly.
+    <header class="relative bg-slate-900 py-24 overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-tr from-blue-700/20 to-indigo-900/40"
+      ></div>
+      <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <h1
+          class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter"
+        >
+          Tentang <span class="text-blue-500 italic">BagusDev.</span>
+        </h1>
+        <p
+          class="text-blue-100/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium"
+        >
+          Kami bukan sekadar tukang ketik kode. Kami adalah partner lo dalam
+          membangun pengalaman digital yang modern dan cepat.
         </p>
       </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-3xl font-bold mb-4">Siapa Kami?</h2>
-        <p class="text-gray-700 mb-4">
-          BagusDev berfokus pada frontend modern dengan Tailwind CSS. Target
-          kami simpel: cepat, rapi, dan gampang dikembangin.
-        </p>
-        <p class="text-gray-700 mb-4">
-          UX enak, performa jalan, dan tampilan nggak malu-maluin.
-        </p>
-        <p>
-          <a href="../index.html" class="text-blue-600 font-bold"
-            >Pelajari lebih lanjut</a
+    <main class="max-w-6xl mx-auto px-6 py-24">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1">
+          <h2
+            class="text-3xl md:text-4xl font-black mb-8 tracking-tight text-slate-800 italic uppercase"
           >
-        </p>
-      </div>
+            Siapa Kami?
+          </h2>
+          <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
+            <p>
+              BagusDev lahir dari keresahan liat web yang lelet dan tampilannya
+              kaku. Kita fokus di
+              <span class="text-blue-600 font-bold italic"
+                >Frontend Modern</span
+              >
+              pake Tailwind CSS buat mastiin setiap pixel itu berarti.
+            </p>
+            <p>
+              Prinsip kita cuma tiga:
+              <span class="font-bold text-slate-900">Performa kenceng</span>,
+              <span class="font-bold text-slate-900">Code rapi</span>, dan
+              <span class="font-bold text-slate-900">UX yang bikin betah</span>.
+              Nggak ada ceritanya user bingung pas pake produk bikinan kita.
+            </p>
+          </div>
+          <div class="mt-10">
+            <a
+              href="../index.html"
+              class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black tracking-tight hover:bg-blue-700 hover:scale-105 transition shadow-xl shadow-blue-500/20"
+            >
+              LIHAT KERJAAN KITA
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
 
-      <div class="flex justify-center">
-        <img
-          src="../image/team.svg"
-          class="rounded-lg shadow-lg w-full md:w-4/5"
-          alt="Tim BagusDev"
-        />
+        <div class="order-1 md:order-2 flex justify-center">
+          <div class="relative group">
+            <div
+              class="absolute inset-0 bg-blue-600 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-20 transition"
+            ></div>
+            <img
+              src="../image/team.svg"
+              class="relative rounded-[3rem] shadow-2xl w-full md:w-full transform group-hover:-rotate-2 transition duration-500"
+              alt="Tim BagusDev"
+            />
+          </div>
+        </div>
       </div>
     </main>
 
-    <!-- TEAM -->
-    <section class="max-w-6xl mx-auto px-4 py-16">
-      <h2 class="text-3xl font-bold text-center mb-12">Tim Kami</h2>
+    <section class="bg-white py-24 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2
+          class="text-4xl font-black tracking-tight text-slate-900 mb-4 uppercase italic"
+        >
+          Otak di Balik Layar
+        </h2>
+        <p class="text-slate-500 font-medium mb-16">
+          Kenalan sama tim kecil tapi mematikan punya BagusDev.
+        </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <img
-            src="../image/fotoPortfolio.jpeg"
-            class="w-32 h-32 rounded-full object-cover object-top mx-auto mb-4"
-            alt="Bagus Setiawan"
-          />
-          <h3 class="text-xl font-semibold text-center">Bagus Setiawan</h3>
-          <p class="text-gray-600 text-center">Frontend Developer</p>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="group">
+            <div
+              class="bg-slate-50 p-8 rounded-[2.5rem] border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+            >
+              <div class="relative w-32 h-32 mx-auto mb-6">
+                <div
+                  class="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-20 transition"
+                ></div>
+                <img
+                  src="../image/fotoPortfolio.jpeg"
+                  class="relative w-full h-full rounded-full object-cover object-top border-4 border-white shadow-lg"
+                  alt="Bagus Setiawan"
+                />
+              </div>
+              <h3 class="text-xl font-black text-slate-900">Bagus Setiawan</h3>
+              <p
+                class="text-blue-600 text-sm font-bold uppercase tracking-widest mt-1"
+              >
+                Frontend Wizard
+              </p>
+            </div>
+          </div>
 
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <img
-            src="../image/undraw_profile-pic_fatv.svg"
-            class="w-32 h-32 rounded-full mx-auto mb-4"
-          />
-          <h3 class="text-xl font-semibold text-center">My Friend</h3>
-          <p class="text-gray-600 text-center">UI/UX Designer</p>
-        </div>
+          <div class="group">
+            <div
+              class="bg-slate-50 p-8 rounded-[2.5rem] border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+            >
+              <img
+                src="../image/undraw_profile-pic_fatv.svg"
+                class="w-32 h-32 rounded-full mx-auto mb-6 grayscale group-hover:grayscale-0 transition duration-500 shadow-lg"
+              />
+              <h3 class="text-xl font-black text-slate-900">Sobat Desain</h3>
+              <p
+                class="text-slate-400 text-sm font-bold uppercase tracking-widest mt-1 group-hover:text-blue-600 transition"
+              >
+                UI/UX Designer
+              </p>
+            </div>
+          </div>
 
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <img
-            src="../image/undraw_shy-guy-avatar_094a.svg"
-            class="w-32 h-32 rounded-full mx-auto mb-4"
-          />
-          <h3 class="text-xl font-semibold text-center">My Friend</h3>
-          <p class="text-gray-600 text-center">Backend Developer</p>
+          <div class="group">
+            <div
+              class="bg-slate-50 p-8 rounded-[2.5rem] border border-transparent hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+            >
+              <img
+                src="../image/undraw_shy-guy-avatar_094a.svg"
+                class="w-32 h-32 rounded-full mx-auto mb-6 grayscale group-hover:grayscale-0 transition duration-500 shadow-lg"
+              />
+              <h3 class="text-xl font-black text-slate-900">Sobat Server</h3>
+              <p
+                class="text-slate-400 text-sm font-bold uppercase tracking-widest mt-1 group-hover:text-blue-600 transition"
+              >
+                Backend Engineer
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t">
+    <footer class="bg-white py-12">
       <div
-        class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4"
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
       >
-        <p class="text-gray-500 text-sm">&copy; 2025 BagusDev</p>
-        <div class="flex gap-4 text-gray-500">
-          <a href="#" class="hover:text-blue-600">Privacy</a>
-          <a href="#" class="hover:text-blue-600">Terms</a>
-          <a href="#" class="hover:text-blue-600">Contact</a>
+        <p
+          class="text-slate-400 text-sm font-bold uppercase tracking-tight italic"
+        >
+          &copy; 2026 BagusDev. High Tech, Low Life.
+        </p>
+        <div class="flex gap-8 text-sm font-bold text-slate-500">
+          <a href="#" class="hover:text-blue-600 transition">Privacy</a>
+          <a href="#" class="hover:text-blue-600 transition">Terms</a>
+          <a href="#" class="hover:text-blue-600 transition">Contact</a>
         </div>
       </div>
     </footer>
@@ -148,17 +258,15 @@
       btn.addEventListener("click", () => {
         menu.classList.toggle("max-h-0");
         menu.classList.toggle("max-h-screen");
-
         lines[0].classList.toggle("rotate-45");
-        lines[0].classList.toggle("translate-y-1.5");
-
+        lines[0].classList.toggle("translate-y-2");
         lines[1].classList.toggle("opacity-0");
-
         lines[2].classList.toggle("-rotate-45");
-        lines[2].classList.toggle("-translate-y-1.5");
+        lines[2].classList.toggle("-translate-y-2");
       });
+
       window.addEventListener("scroll", () => {
-        nav.classList.toggle("shadow-md", window.scrollY > 10);
+        nav.classList.toggle("shadow-xl", window.scrollY > 10);
       });
     </script>
   </body>

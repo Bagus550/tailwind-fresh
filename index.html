@@ -1,119 +1,234 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BagusDev</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BagusDev | Digital Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="icon" type="image/png" href="/../image/logo-white.ico">
-    <link rel="stylesheet" href="output.css">
-</head>
+    <link rel="stylesheet" href="output.css" />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .bg-grid {
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+    </style>
+  </head>
 
-<body class="scroll-smooth">
-
-    <nav class="bg-white shadow px-4 md:px-8 py-4 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-lg md:text-xl font-bold text-blue-600">BagusDev</h1>
-            <a href="#cta" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                Get Started
-            </a>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <nav
+      class="bg-white/70 backdrop-blur-lg border-b border-slate-200 px-6 py-4 sticky top-0 z-50"
+    >
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-extrabold tracking-tighter text-blue-600">
+          BAGUS<span class="text-slate-400">DEV</span>
+        </h1>
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600"
+        >
+          <a href="#" class="hover:text-blue-600 transition">Beranda</a>
+          <a href="#about" class="hover:text-blue-600 transition">Tentang</a>
+          <a href="#portfolio" class="hover:text-blue-600 transition"
+            >Portfolio</a
+          >
         </div>
+        <a
+          href="#cta"
+          class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-200 transition-all active:scale-95"
+        >
+          Hubungi Saya
+        </a>
+      </div>
     </nav>
 
-    <section class="bg-gray-100 py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Ruang Karya & Perjalanan<br class="hidden md:block">
-            Digital Saya
-            </h2>
+    <section class="relative bg-white pt-20 pb-32 overflow-hidden bg-grid">
+      <div
+        class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-50"
+      ></div>
 
-            <p class="text-gray-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Tempat gue nyimpen perjalanan belajar, dokumentasi kegiatan,
-            dan portfolio project yang gue bangun dari nol.
-            Bukan cuma hasil — tapi prosesnya juga.
-            </p>
-
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#portfolio"
-                class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                Lihat Portfolio
-            </a>
-
-            <a href="#about"
-                class="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
-                Tentang Saya
-            </a>
-            </div>
-
+      <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold mb-8 uppercase tracking-wider"
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
+            ></span>
+          </span>
+          Tersedia untuk Project Baru
         </div>
-    </section>
 
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.05]"
+        >
+          Eksplorasi Ide Lewat <br class="hidden md:block" />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"
+            >Karya Digital.</span
+          >
+        </h2>
 
-            <h3 class="text-2xl md:text-3xl font-bold text-center mb-4">
-            Kenapa Website Ini Dibuat?
-            </h3>
+        <p
+          class="text-slate-600 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
+        >
+          Gue Bagus, seorang pemelajar yang hobi ngebangun produk digital. Di
+          sini gue nyimpen proses belajar, dokumentasi, dan hasil eksperimen
+          gue.
+        </p>
 
-            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            Bukan sekadar pamer hasil akhir, tapi tempat buat nyimpen proses,
-            eksperimen, dan perkembangan skill dari waktu ke waktu.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <div class="bg-gray-50 p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
-                <h4 class="font-bold text-xl mb-2">Dokumentasi Nyata</h4>
-                <p class="text-gray-600">
-                Kegiatan, project, dan catatan belajar tersimpan rapi dan bisa dilihat kapan aja.
-                </p>
-            </div>
-
-            <div class="bg-gray-50 p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
-                <h4 class="font-bold text-xl mb-2">Portfolio Berkembang</h4>
-                <p class="text-gray-600">
-                Bukan cuma yang udah jadi, tapi juga proses dan peningkatan dari waktu ke waktu.
-                </p>
-            </div>
-
-            <div class="bg-gray-50 p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
-                <h4 class="font-bold text-xl mb-2">Satu Identitas Digital</h4>
-                <p class="text-gray-600">
-                Semua karya dan aktivitas terkumpul dalam satu tempat yang konsisten.
-                </p>
-            </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="cta" class="bg-blue-600 py-16 md:py-20 text-white">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-
-            <h3 class="text-2xl md:text-3xl font-bold mb-4">
-            Siap Lihat Perjalanannya?
-            </h3>
-
-            <p class="mb-8 text-blue-100 max-w-xl mx-auto">
-            Semua kegiatan, dokumentasi, dan project gue ada di satu tempat.
-            Scroll dikit, eksplor banyak.
-            </p>
-
-            <a href="src/dashboard.html"
-            class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold
-                    hover:bg-gray-100 transition shadow">
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="src/dashboard.html"
+            class="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-blue-600 font-pj rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-blue-700 shadow-xl shadow-blue-200"
+            role="button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 mr-2 -ml-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+              />
+            </svg>
             Jelajahi Dashboard
-            </a>
+          </a>
 
+          <a
+            href="#about"
+            class="inline-flex items-center justify-center px-10 py-4 font-bold text-slate-700 transition-all duration-200 bg-white border-2 border-slate-200 rounded-2xl hover:bg-slate-50 hover:border-slate-300"
+          >
+            Siapa Gue?
+          </a>
         </div>
+      </div>
     </section>
 
-    <footer class="bg-white py-6 border-t">
-        <div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm">
-            &copy; 2025 BagusDev. All rights reserved.
-        </div>
-    </footer>
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+          >
+            <div
+              class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200 group-hover:rotate-6 transition-transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h4 class="font-extrabold text-xl mb-4">Dokumentasi Nyata</h4>
+            <p class="text-slate-500 leading-relaxed">
+              Gak cuma naruh hasil, gue catat semua *learning curve* gue biar
+              rapi dan gampang di-*review*.
+            </p>
+          </div>
 
-</body>
+          <div
+            class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+          >
+            <div
+              class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-indigo-200 group-hover:rotate-6 transition-transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-extrabold text-xl mb-4">Progres Berkelanjutan</h4>
+            <p class="text-slate-500 leading-relaxed">
+              Portfolio ini bakal terus tumbuh seiring dengan makin banyaknya
+              error yang gue hadapi.
+            </p>
+          </div>
+
+          <div
+            class="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-cyan-100 group-hover:rotate-6 transition-transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h4 class="font-extrabold text-xl mb-4">Satu Hub Digital</h4>
+            <p class="text-slate-500 leading-relaxed">
+              Gak perlu sebar banyak link. Cukup di sini, lo bisa tau siapa gue
+              dan apa yang gue kerjakan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white py-12 border-t border-slate-200">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="text-slate-500 text-sm">
+          &copy; 2026 BagusDev. Build with ☕ and passion.
+        </p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition"
+            >GitHub</a
+          >
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition"
+            >LinkedIn</a
+          >
+          <a href="#" class="text-slate-400 hover:text-blue-600 transition"
+            >Twitter</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

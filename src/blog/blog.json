@@ -6,7 +6,7 @@
     "category": "CSS",
     "sec-category": "Tutorial",
     "date": "2025-12-29",
-    "link": "artikel/belajar-tailwind.html"
+    "link": "../blog/artikel/belajar-tailwind.html"
   },
   {
     "title": "JavaScript Dasar yang Wajib Dipahami",
@@ -23,6 +23,6 @@
     "category": "Career",
     "sec-category": "Design",
     "date": "2026-01-01",
-    "link": "artikel/tutor-portfolio.html"
+    "link": "../blog/artikel/tutor-portfolio.html"
 }
 ]

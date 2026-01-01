@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
     <link rel="icon" type="image/png" href="../../../image/logo-white.ico" />
     <link rel="stylesheet" href="../../../output.css" />
@@ -29,6 +31,20 @@
       }
       code {
         font-family: "Fira Code", "Courier New", monospace;
+      }
+      /* Buat maksa background & shadow Prism jadi ilang */
+      pre[class*="language-"], 
+      code[class*="language-"] {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        text-shadow: none !important; /* Biar gak ada efek bayangan di teks */
+      }
+
+      /* Kalo masih ada sisa padding aneh, kita reset juga */
+      pre[class*="language-"] {
+        padding: 0 !important;
+        margin: 0 !important;
       }
     </style>
   </head>
@@ -84,7 +100,7 @@
           class="text-3xl md:text-5xl font-black leading-[1.1] mb-8 tracking-tighter text-slate-900"
         >
           Belajar CSS dari Nol:
-          <span class="text-blue-600">Fundamental</span> untuk Pemula.
+          <span class="text-blue-600">Fundamental</span> CSS untuk Pemula.
         </h1>
 
         <p
@@ -92,7 +108,7 @@
         >
           Sebelum ngomongin layouting, Flexbox, atau Grid, ada satu hal yang
           sering disepelekan: fundamental CSS. Dasar yang kuat adalah kunci web
-          yang mantap.
+          yang siap deploy.
         </p>
       </header>
 
@@ -109,6 +125,12 @@
       <article
         class="space-y-10 text-slate-700 leading-relaxed text-base md:text-lg"
       >
+        <p class="text-justify">
+          Di tulisan ini, kita fokus ke konsep dasar CSS, lengkap dengan istilah
+          dan pengertian yang emang dipakai secara resmi, tapi dijelasin dengan
+          bahasa simpel.
+        </p>
+
         <section class="space-y-4">
           <h2
             class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight"
@@ -124,8 +146,10 @@
           </p>
           <p>
             Kalau HTML berfungsi sebagai struktur atau kerangka konten, maka CSS
-            berperan sebagai pengatur estetika. Tanpa CSS, halaman web cuma
-            sekumpulan teks polos yang ngebosenin.
+            berperan sebagai pengatur estetika, mulai dari warna, ukuran teks,
+            jarak antar elemen, hingga tata letak halaman. Tanpa CSS, halaman
+            web tetap bisa diakses, tetapi tampilannya sangat minimal dan kurang
+            nyaman dilihat.
           </p>
         </section>
 
@@ -139,7 +163,7 @@
             CSS ditulis menggunakan pola dasar yang konsisten, yaitu
             <span class="font-bold text-slate-900"
               >selector, property, dan value</span
-            >.
+            >. Struktur ini menjadi fondasi dari seluruh aturan CSS yang ada.
           </p>
           <div
             class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
@@ -149,12 +173,19 @@
               <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
               <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
             </div>
-            <pre
-              class="text-blue-400 font-mono text-sm md:text-base leading-relaxed"
-            ><code><span class="text-pink-500">selector</span> {
-  <span class="text-blue-300">property</span>: <span class="text-emerald-400">value</span>;
-}</code></pre>
+            <pre><code class="language-css">
+Selector {
+  Property: Value;
+}
+            </code></pre>
           </div>
+          
+          <p class="text-justify">
+            Struktur ini menunjukkan bahwa CSS bekerja dengan cara memilih
+            elemen tertentu, lalu menerapkan aturan gaya ke elemen tersebut.
+            Konsep ini penting dipahami sejak awal karena semua penulisan CSS,
+            baik yang sederhana maupun kompleks, selalu mengikuti pola ini.
+          </p>
         </section>
 
         <section class="space-y-6">
@@ -165,7 +196,9 @@
           </h3>
           <p>
             <i>Selector</i> adalah bagian yang menentukan elemen mana yang bakal
-            dipoles. Jenis yang wajib lo tau:
+            dipoles. Menurut dokumentasi MDN Web Docs,
+            <i>selector</i> digunakan untuk “menargetkan elemen HTML berdasarkan
+            tipe, class, id, atribut, atau hubungan antar elemen”. Jenis yang wajib lo tau:
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -198,28 +231,434 @@
               </p>
             </div>
           </div>
+          <p>Contoh Penulisan :</p>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+p {
+  color: red;
+}
+            </code></pre>
+          </div>
         </section>
 
         <section class="space-y-6">
-          <h3
+          <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+            Property dan Value
+          </h2>
+
+          <p class="text-justify">
+            Setelah elemen target ditentukan oleh selector, CSS menggunakan
+            property dan value untuk menentukan gaya yang akan diterapkan.
+            Property menunjukkan aspek apa yang ingin diubah, sedangkan value
+            menunjukkan nilai dari perubahan tersebut.
+          </p>
+          <p></p>
+            Contoh penulisan property dan value:
+          </p>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+p {
+  color: red;
+  font-size: 16px;
+}
+            </code></pre>
+          </div>
+          <p>Artinya :</p>
+          <ul class="list-disc pl-8 space-y-2">
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >color</code
+              >
+              → warna teks
+            </li>
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >font-size</code
+              >
+              → ukuran teks
+            </li>
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >blue</code
+              >
+              &
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >16px</code
+              >
+              → warna dan ukuran teks (value)
+            </li>
+          </ul>
+          <p class="text-justify">
+            Sebagai contoh, property
+            <code
+              class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+            >
+              color
+            </code>
+            digunakan untuk mengatur warna teks, sementara value-nya bisa berupa
+            nama warna, kode hexadecimal, atau format warna lainnya. Hubungan
+            antara property dan value ini menjadi inti dari cara kerja CSS dalam
+            mengatur tampilan elemen.
+          </p>
+          <p class="text-justify">
+            Pemahaman selector sangat krusial karena kesalahan dalam memilih
+            selector sering kali membuat CSS tidak bekerja sebagaimana mestinya,
+            meskipun penulisannya sudah benar.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+            Class dan ID dalam CSS
+          </h2>
+
+          <p class="text-justify">
+            Dalam HTML dan CSS, class dan id digunakan sebagai penanda elemen
+            agar bisa dipilih secara spesifik. Menurut spesifikasi HTML dan CSS,
+            class bersifat tidak unik dan dapat digunakan oleh banyak elemen,
+            sedangkan id bersifat unik dan hanya boleh digunakan satu kali dalam
+            satu halaman.
+          </p>
+          <h4 class="font-semibold">
+            Class
+          </h4>
+          <p>Dipakai buat:</p>
+          <ul class="list-disc pl-8 space-y-2">
+            <li>Memilih banyak elemen dengan tampilan yang sama</li>
+            <li>Mengaplikasikan gaya yang konsisten di beberapa tempat</li>
+          </ul>
+          <p>HTML :</p>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-html">
+&lt;div class="card"&gt;&lt;/div&gt;
+            </code></pre>
+          </div>
+        <p>CSS :</p>
+        <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+.card {
+  background-color:white;
+}
+            </code></pre>
+          </div>
+          <h4 class="font-semibold">ID</h4>
+          <p>Dipakai buat:</p>
+          <ul class="list-disc pl-8 space-y-2">
+            <li>Memilih elemen spesifik yang unik di halaman</li>
+            <li>Menerapkan styling khusus ke satu elemen saja</li>
+          </ul>
+          <p>HTML :</p>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-html">
+&lt;div id="navbar"&gt;&lt;/div&gt;
+            </code></pre>
+          </div>
+        <p>CSS :</p>
+        <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+#navbar {
+  height: 60px;
+}
+            </code></pre>
+          </div>
+          <p class="text-justify">
+            Class umumnya digunakan untuk kebutuhan styling yang berulang,
+            seperti kartu, tombol, atau komponen tertentu. Sementara itu, id
+            lebih sering digunakan untuk elemen yang bersifat spesifik, seperti
+            header utama atau container utama halaman.
+          </p>
+          <p class="text-justify">
+            Pemahaman perbedaan class dan id penting untuk menjaga struktur CSS
+            tetap rapi dan mudah dikembangkan.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+            Warna dalam CSS
+          </h2>
+          <p class="text-justify">
+            CSS menyediakan beberapa cara untuk mendefinisikan warna. Warna
+            dapat ditulis menggunakan nama warna, format hexadecimal, maupun
+            format RGB. Menurut MDN, penggunaan format warna seperti hexadecimal
+            dan RGB memberikan fleksibilitas lebih tinggi dalam desain
+            antarmuka.
+          </p>
+          <ul class="list-disc pl-8 space-y-2">
+            <li>
+              Nama warna →
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >red</code
+              >,
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >blue</code
+              >
+            </li>
+            <li>
+              Hex →
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >#FF0000</code
+              >,
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >#0000FF</code
+              >
+            </li>
+            <li>
+              RGB →
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >rgb(255, 0, 0)</code
+              >,
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >rgb(0, 0, 255)</code
+              >
+            </li>
+          </ul>
+          <p>Contoh :</p>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+color: red;       /* Nama Warna */
+background-color: #00FF00; /* Hexadecimal */
+            </code></pre>
+          </div>
+          <p class="text-justify">
+            Dalam praktik modern, banyak developer menggunakan warna dengan
+            nilai yang mendekati abu-abu gelap untuk teks dan warna terang untuk
+            latar belakang, karena lebih nyaman dibaca dan terlihat lebih
+            profesional.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+            Satuan Ukuran dalam CSS
+          </h2>
+          <p class="text-justify">
+            CSS menggunakan berbagai satuan ukuran untuk menentukan dimensi
+            elemen. Satuan seperti pixel (px) bersifat absolut, sedangkan
+            persentase, viewport height (vh), dan viewport width (vw) bersifat
+            relatif. Menurut W3C, penggunaan satuan relatif sering kali lebih
+            disarankan dalam desain responsif karena memungkinkan elemen
+            menyesuaikan diri dengan ukuran layar yang berbeda.
+          </p>
+          <ul class="list-disc pl-8 space-y-2">
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >px</code
+              >
+              → pixel (paling aman buat pemula)
+            </li>
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >%</code
+              >
+              → persentase
+            </li>
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >vh</code
+              >
+              → viewport height
+            </li>
+            <li>
+              <code
+                class="inline-flex items-center bg-gray-200 px-1 rounded text-sm"
+                >vw</code
+              >
+              → viewport width
+            </li>
+          </ul>
+          <p>Contoh :</p>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+width: 100px;   /* Pixel */
+height: 50vh;   /* Viewport Height */
+            </code></pre>
+          </div>
+          <p class="text-justify">
+            Bagi pemula, penggunaan pixel sering disarankan karena lebih mudah
+            dipahami dan memberikan hasil yang konsisten. Setelah konsep dasar
+            dikuasai, barulah satuan relatif digunakan untuk membuat tampilan
+            yang responsif terhadap berbagai ukuran layar.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+            Margin dan Padding
+          </h2>
+          <p class="text-justify">
+            Margin dan padding merupakan konsep dasar dalam CSS yang berkaitan
+            dengan jarak. Padding adalah jarak antara konten dengan batas
+            elemen, sedangkan margin adalah jarak antara satu elemen dengan
+            elemen lainnya.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col">
+              <code class="text-blue-600 font-bold block mb-2 text-xl italic">Margin</code>
+              <p class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-6">
+                Jarak luar elemen (interaksi antar tetangga)
+              </p>
+              
+              <div class="mt-auto bg-orange-100 border-2 border-dashed border-orange-400 p-4 rounded-xl relative">
+                <span class="absolute -top-3 left-3 bg-orange-400 text-white text-[8px] font-bold px-2 py-0.5 rounded">MARGIN AREA</span>
+                <div class="bg-white border-2 border-slate-200 h-16 rounded-lg flex items-center justify-center text-xs font-bold text-slate-400 uppercase">
+                  Elemen Kamu
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col">
+              <code class="text-emerald-600 font-bold block mb-2 text-xl italic">Padding</code>
+              <p class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-6">
+                Jarak dalam elemen (konten ke dinding)
+              </p>
+
+              <div class="mt-auto bg-slate-900 p-4 rounded-xl relative border-2 border-slate-800">
+                <div class="bg-emerald-100 border-2 border-dashed border-emerald-400 h-16 rounded-lg flex items-center justify-center relative">
+                  <span class="absolute -top-3 left-3 bg-emerald-500 text-white text-[8px] font-bold px-2 py-0.5 rounded">PADDING AREA</span>
+                  <div class="bg-white px-4 py-1 rounded shadow-sm text-[10px] font-bold text-emerald-600 uppercase">
+                    Konten
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-slate-900 rounded-3xl p-6 md:p-8 shadow-inner overflow-hidden relative"
+          >
+            <div class="absolute top-4 right-6 flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+            <pre><code class="language-css">
+.box {
+  padding: 20px;
+  margin: 15px;
+}
+            </code></pre>
+          </div>
+          <p class="text-justify">
+            Menurut konsep box model CSS, pengaturan margin dan padding sangat
+            memengaruhi tata letak halaman. Kesalahan dalam memahami dua
+            properti ini sering kali menyebabkan layout terlihat tidak rapi atau
+            tidak sesuai harapan.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">
+            Box Model CSS
+          </h2>
+          <p class="text-justify">
+            Box model adalah konsep fundamental yang menjelaskan bahwa setiap
+            elemen HTML direpresentasikan sebagai sebuah kotak. Kotak ini
+            terdiri dari content, padding, border, dan margin. Konsep ini
+            dijelaskan secara resmi dalam spesifikasi CSS oleh W3C.
+          </p>
+          <p class="text-justify">
+            Memahami box model membantu developer memahami mengapa ukuran elemen
+            bisa berubah meskipun nilai width dan height sudah ditentukan. Oleh
+            karena itu, box model menjadi dasar penting sebelum mempelajari
+            layouting lanjutan.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2
             class="text-xl md:text-2xl font-black text-slate-900 tracking-tight text-blue-600 italic"
           >
             Penutup
-          </h3>
-          <p>
-            Fundamental CSS mungkin terlihat sederhana, tapi di sinilah letak
-            kekuatan utama seorang frontend developer. Jangan cuma hafal, tapi
-            pahamin cara kerjanya.
+          </h2>
+          <p class="text-justify">
+            Fundamental CSS mungkin terlihat sederhana dan kurang “wah”, tetapi
+            justru di sinilah letak kekuatan utama seorang frontend developer.
+            Dengan memahami konsep dasar seperti selector, property, box model,
+            dan satuan ukuran, proses belajar layouting akan terasa jauh lebih
+            masuk akal.
+          </p>
+          <p class="text-justify">
+            CSS bukan tentang menghafal, melainkan tentang memahami cara browser
+            menerjemahkan aturan visual. Kalau fondasinya kuat, level lanjutan
+            tinggal soal latihan dan jam terbang.
           </p>
           <div
             class="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-500/20 mt-10"
           >
             <p class="font-black text-xl italic mb-2">
-              "Kunci belajar CSS itu satu: sering praktek."
+              "Simplicity is the ultimate sophistication." - Leonardo da Vinci
             </p>
             <p class="text-blue-100/80 text-sm">
-              Jangan takut layout berantakan — itu tanda lo lagi proses naik
-              level bang! 🚀
+              "Kesederhanaan merupakan bentuk tertinggi dari sebuah kompleksitas yang telah mencapai titik efisiensi dan kematangan fungsi."
             </p>
           </div>
         </section>

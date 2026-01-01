@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Framework: Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 
-Selamat datang di markas digital gue! Tempat di mana semua eksperimen kode, sirkuit, dan algoritma ngumpul jadi satu—plus sedikit dokumentasi "pelarian" gue dari layar monitor.
+Selamat datang di markas digital gue! Tempat di mana semua eksperimen kode, sirkuit, dan algoritma ngumpul jadi satu plus sedikit dokumentasi "pelarian" gue dari layar monitor.
 
 ## 🛠️ What's Inside?
 
